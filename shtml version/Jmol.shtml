@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Get Jmol</title>
+  <meta content="J. Gutow" name="author">
+  <meta content="shtml wrapper for Get Jmol Page" name="description">
+</head>
+<body>
+<br>
+<!--#include virtual = "VSEPR_Header.html"--><!--#include virtual = "../../Applets/Java/Jmol/Get_Jmol.html"-->
+<br>
+</body>
+</html>

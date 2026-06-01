@@ -1,0 +1,36 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta name="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>Dr. Gutow's Molecular Shapes Introduction</title>
+  <meta content="J. Gutow" name="author">
+  <meta content="Introduction to Dr Gutow's Molecular Shapes Web Site" name="description">
+  <meta content="VSEPR, Valence Shell Electron Pair Repulsion Model, Electron Domain Model, molecular shapes, rotatable, images, jmol" name="keywords">
+</head>
+  <body style="color: rgb(0, 0, 0); background-color: rgb(250, 248, 244);" vlink="#990099" link="#000099" alink="#000099">
+
+<!--#include virtual = "VSEPR_Header.html"-->
+<b>Introduction</b> <br>
+This web site is intended help you learn to estimate the shape
+of a molecule once you have determined the molecule's <u><a href="https://cms.gutow.uwosh.edu/gutow/Lewis_Tutorial/Lewis.shtml" target="noframes">Lewis
+Structure</a></u>.&nbsp;
+The model used is often called the VSEPR (Valence Shell Electron Pair
+Repulsion) model and descriptions of it may be found in almost
+all introductory chemistry texts.
+<p><b>Software Requirements</b> <br>
+This site should work in any modern browser with javascript activated 
+(the default). You may also download the 3-D molecular images (*.pdb 
+files) and use
+the free program <a href="Jmol.shtml">Jmol</a>
+(Jmol requires Java to be installed on your machine) to view them.<br>
+</p>
+<p><a href="VSEPR_model.shtml"><span style="font-weight: bold;">The
+Model (VSEPR)</span></a><br>
+</p>
+<p style="text-align: right;"><small><small>Last Updated: October 26, 2021<br>
+Expires: ---<br>
+J. Gutow</small></small><br>
+</p>
+
+
+</body></html>

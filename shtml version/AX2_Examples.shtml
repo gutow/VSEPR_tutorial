@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <title>AX2 examples (Triatomics)</title>
+  <style type="text/css"> @import url(VSEPR.css);</style>
+<script src="../../Applets/JSmol/JSmol.min.js"></script>
+<!-- just for testing...uncomment above before loading onto server and
+delete below or comment it out-->
+<!--<script src ="JSmol.min.js"></script>-->
+  <meta content="J. Gutow" name="author">
+  <meta content="Live, animated examples of triaatomic molecules"
+ name="description">
+  <meta
+ content="VSEPR, Valence Shell Electron Pair Repulsion Model, Electron Domain Model, molecular shapes, rotatable, images, jmol"
+ name="keywords">
+ <script type="text/javascript">
+var VSEPR_Jmol; //used to hold the applet.
+Jmol.Info = {
+      
+      jarPath: "../../Applets/JSmol/java",
+//      jarPath: "java",
+      jarFile: "JmolApplet0.jar",
+      j2sPath: "../../Applets/JSmol/j2s",
+//      j2sPath: "j2s",
+      use: "HTML5", // could be JAVA or HTML5
+	  disableJ2SLoadMonitor: false,
+	  disableInitialConsole: true,
+	  serverURL: "../../Applets/JSmol/php/jsmol.php",
+	  script: "set echo middle; color echo blue; set echo on; echo Click on the buttons|at right to display|a 3D image you can|manipulate.;"
+    }
+      
+;(function() {
+
+// logic is set by indicating order of USE -- default is HTML5 for this test page, though
+   var use = "HTML5 JAVA IMAGE" // WEBGL only by request by link below.
+   var s = document.location.search;
+
+   if (s.indexOf("USE=") >= 0)
+     Jmol.Info.use = s.split("USE=")[1].split("&")[0]
+   else if (s.indexOf("JAVA") >= 0)
+     Jmol.Info.use = "JAVA"
+   else if (s.indexOf("IMAGE") >= 0)
+     Jmol.Info.use = "IMAGE"
+   else if (s.indexOf("NOWEBGL") >= 0)
+     Jmol.Info.use = "JAVA IMAGE"
+   else if (s.indexOf("WEBGL") >= 0)
+     Jmol.Info.use = "WEBGL HTML5"
+   if (s.indexOf("NOWEBGL") >= 0)
+     Jmol.Info.use = use.replace(/WEBGL/,"")
+   var useSignedApplet = (s.indexOf("SIGNED") >= 0);
+   if(useSignedApplet && Jmol.Info.use == "HTML5") Jmol.Info.use = "JAVA";
+})();
+
+</script>
+</head>
+  <body>
+<!--#include virtual = "VSEPR_Header.html"-->
+<div id="display">
+  <div id="Jmol_div">
+      <script type="text/javascript">
+        VSEPR_Jmol = Jmol.getApplet("VSEPR_Jmol", Jmol.Info);
+      </script>
+  </div>
+ <div id = "Jmol_button_div">
+  <div id ="AX2-header" class = "subtitle-text">
+    Triatomics (AX<sub>2</sub> Configuration)
+  </div>
+  <div id="AX2-explanation" class = "explanation-text">
+  Molecules in this category are all triatomics (molecules containing
+three atoms). There are only two electron groups around the
+central atom. Both electron groups are bonds to the outer atoms. 
+The configuration is specified as AX<sub>2</sub>, where A represents the 
+central atom and each X represents one of the other atoms.
+  </div>
+  <table class="example-table"><tbody>
+    <tr>
+      <td>Formula</td><td>Lewis Structure</td><td>Live 3-D view</td><td>Download for Jmol/Rasmol</td>
+    <tr>
+      <td>CO<sub>2</sub><br>
+      </td>
+      <td><img src="CO2_lewis.gif" align="bottom" border="0" height="25"
+ width="52">
+      </td>
+      <td>
+      <script type = "text/javascript">
+        Jmol.jmolButton("VSEPR_Jmol", "load CO2.pdb; spacefill 25%; connect (atomno=1) (atomno=3) double; connect (atomno=1) (atomno=2) double; wireframe 0.1; set echo on; echo carbon dioxide; spin on;", "carbon dioxide", "CO2_button", "Click for 3-D view of carbon dioxide");
+      </script></td>
+      <td><a href="CO2.pdb">CO2.pdb</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+ </div></div>
+ <div id="help">
+  <!--#include virtual = "MVInstructions.html"--> 
+ </div>
+ <div class="update-info">Last Update: November 17, 2016 <br> by J. Gutow <br>Expires: --</div>
+</body>
+</html>

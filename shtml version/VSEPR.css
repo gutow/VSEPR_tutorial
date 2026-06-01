@@ -1,0 +1,68 @@
+  #display {
+      display:block;
+      border:solid;
+      border-width:1px;
+      border-color:grey;
+      height:auto;
+  }
+  #Jmol_div {
+      position:relative;
+      /*display:inline-block;*/
+      float:left;
+      padding:0;
+      top:5px;
+      border:solid;
+      border-color:gray;
+      border-width:1px;
+      width:30%;
+      min-width:300px;
+  }
+  #Jmol_button_div {
+      position:relative;
+      /*display:inline-block;*/
+      padding:2px;
+      overflow:scroll;
+      max-height:350px;
+  }
+  body {
+      color: rgb(0, 0, 0); 
+      background-color: rgb(250, 248, 244);
+  }
+  .subtitle-text {
+      font-weight:bold;
+      text-align:center;
+      font-size:1.5em;
+  }
+  .explanation-text {
+      margin:2px;
+  }
+  .example-table {      
+      text-align:center;
+      border:solid;
+      border-top-width:1px;
+      border-left-width:1px;
+      border-bottom-width:1px;
+      border-right-width:1px;
+      border-spacing:2px;
+      border-collapse:separate;
+      border-color:grey;
+      border-style:inset;
+      display:table-cell;
+  }
+  .example-table td {      
+      text-align:center;
+      border:solid;
+      border-top-width:1px;
+      border-left-width:1px;
+      border-bottom-width:1px;
+      border-right-width:1px;
+      border-spacing:2px;
+      border-collapse:separate;
+      border-color:grey;
+      border-style:inset;
+      display:table-cell;
+  }
+  .update-info {
+      text-align:right;
+      font-size:0.5em;
+  }

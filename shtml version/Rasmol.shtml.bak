@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Rasmol</title>
+    <style type="text/css"> @import url(VSEPR.css);</style>
+  <meta content="J. Gutow" name="author">
+  <meta content="shtml wrapper for Rasmol Download Page"
+ name="description">
+</head>
+<body>
+<!--#include virtual = "VSEPR_Header.html"-->
+<h2> Download Rasmol</h2>
+</center>
+ Rasmol is an old molecular viewing program that is no longer a supported
+product.&nbsp; However,&nbsp; both the Mac and PC versions still work.&nbsp;
+The Mac version is a stuffit file and the PC version is a zipped file. 
+<p><a href="http://www.uwosh.edu/faculty_staff/gutow/RasMac.sit">Download 
+the Macintosh version.</a> </p>
+<p><a href="http://www.uwosh.edu/faculty_staff/gutow/RasWin.zip">Download 
+the PC/Windows version.</a> </p>
+  
+<hr>Last updated: September 6, 2013<br>
+Expires: ---<br>
+</body>
+</html>

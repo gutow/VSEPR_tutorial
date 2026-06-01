@@ -1,0 +1,59 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>The VSEPR Model</title>
+  <meta content="J. Gutow" name="author">
+  <meta content="Description of how to use the VSEPR model"
+ name="description">
+  <meta
+ content="VSEPR, Valence Shell Electron Pair Repulsion Model, Electron Domain Model, molecular shapes, rotatable, images, jmol"
+ name="keywords">
+</head>
+  <body style="color: rgb(0, 0, 0); background-color: rgb(250, 248, 244);" alink="#000099" link="#000099" vlink="#990099">
+<!--#include virtual = "VSEPR_Header.html"-->
+<div style="text-align: center;"><big><b>The VSEPR Model</b></big> <br>
+</div>
+<p>The electrons around the atoms in a molecule repel each other.&nbsp;
+They move to be as far apart
+as
+possible while still maintaining the bonding within the molecule.&nbsp;
+The
+procedure for using the model is as follows: </p>
+<ul>
+  <p>1) Determine the correct <a
+ href="../../Lewis_Tutorial/Lewis.shtml">Lewis
+structure</a> for the molecule.&nbsp;
+If it is a diatomic (has only two atoms) it is linear and falls into
+the <a href="AX_Examples.shtml">AX</a> category.&nbsp; If it has 3 or
+more atoms continue with step 2.<br>
+  </p>
+  <p>2) Count the number of electron groups around the central
+atom.&nbsp; A
+group of electrons is a bond, a nonbonding electron pair, or
+occasionally an unpaired nonbonding electron. &nbsp;<span
+ style="font-weight: bold; text-decoration: underline; color: rgb(255, 0, 0);">Each
+triple
+or double bond counts as only one group</span> for the purposes of this
+model.</p>
+  <p>3) Based on this number of groups around the central atom the
+molecule falls into one of six basic
+categories.&nbsp; Within each category there are a number of different
+names for the shapes depending upon the number of atoms and nonbonding
+groups around the central atom. <br>
+  </p>
+</ul>
+<div style="margin-left: 80px;">
+Below is a <span style="font-weight: bold;">Summary Table</span> of
+the categories and names for the various sub-shapes.<br>
+<!--#include virtual = "VSEPR_Summary.html"-->
+</div>
+<div style="text-align: right;"><small><small>Last updated: September 1, 2013<br>
+Expires: ---<br>
+J.&nbsp; Gutow </small></small><br>
+</div>
+<br>
+<br>
+</body>
+</html>

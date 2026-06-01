@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Template</title>
+  <script src="../../Applets/Java/Jmol/Jmol.js"></script>
+  <meta content="J. Gutow" name="author">
+  <meta content="VSEPR template" name="description">
+  <meta
+ content="VSEPR, Valence Shell Electron Pair Repulsion Model, Electron Domain Model, molecular shapes, rotatable, images, jmol"
+ name="keywords">
+</head>
+<body style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 204);"
+ alink="#000099" link="#000099" vlink="#990099">
+<!--#include virtual = "VSEPR_Header.html"-->
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;" height="328" width="325"><iframe
+ name="Jmol_frame" src="Blank.html" style="border: medium none ;"
+ height="328" width="325"> </iframe> <br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><iframe
+ style="border: medium none ;" src="AX_examples.html" height="100%"
+ width="100%"> </iframe> <br>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" rowspan="1" style="vertical-align: top;"> <iframe
+ src="MVInstructions.html" height="100" width="100%"> </iframe> <br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

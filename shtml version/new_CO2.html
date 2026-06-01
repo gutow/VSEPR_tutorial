@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="../../Applets/JSmol/JSmol.min.js">
+  </script>
+  <meta content="J. Gutow" name="author">
+  <meta content="Live CO2 display" name="description">
+  <title>Live 3D CO2</title>
+ <script type="text/javascript">
+
+var VSEPR_Jmol; //used to hold the applet.
+Jmol.Info = {
+      
+      jarPath: "../../Applets/JSmol/java",
+//      jarPath: "java",
+      jarFile: "JmolAppletSigned0.jar",
+      j2sPath: "../../Applets/JSmol/j2s",
+//      j2sPath: "j2s",
+      use: "HTML5", // could be JAVA or HTML5
+      disableJ2SLoadMonitor: false,
+      disableInitialConsole: true,
+      serverURL: "../../Applets/JSmol/php/jsmol.php",
+      width: "100%",
+      script: "set echo middle; color echo blue; set echo on; echo Click on the buttons|at right to display|a 3D image you can|manipulate.;"
+    }
+      
+;(function() {
+
+// logic is set by indicating order of USE -- default is HTML5 for this test page, though
+   var use = "HTML5 JAVA IMAGE" // WEBGL only by request by link below.
+   var s = document.location.search;
+
+   if (s.indexOf("USE=") >= 0)
+     Jmol.Info.use = s.split("USE=")[1].split("&")[0]
+   else if (s.indexOf("JAVA") >= 0)
+     Jmol.Info.use = "JAVA"
+   else if (s.indexOf("IMAGE") >= 0)
+     Jmol.Info.use = "IMAGE"
+   else if (s.indexOf("NOWEBGL") >= 0)
+     Jmol.Info.use = "JAVA IMAGE"
+   else if (s.indexOf("WEBGL") >= 0)
+     Jmol.Info.use = "WEBGL HTML5"
+   if (s.indexOf("NOWEBGL") >= 0)
+     Jmol.Info.use = use.replace(/WEBGL/,"")
+   var useSignedApplet = (s.indexOf("SIGNED") >= 0);
+   if(useSignedApplet && Jmol.Info.use == "HTML5") Jmol.Info.use = "JAVA";
+})();
+
+</script>
+<style type="text/css">
+#Jmol_div{
+	position: relative;
+	width: 50%;
+	float: left;
+	min-width: 300px;
+}
+
+#Molec_Info{
+	position: relative;
+	display: inline;
+	min-width: 180 px;
+}
+</style>
+</head>
+<body>
+  <div id="Jmol_div">
+     <script type="text/javascript">
+        VSEPR_Jmol = Jmol.getApplet("VSEPR_Jmol", Jmol.Info);
+        Jmol.script(VSEPR_Jmol,'load CO2.pdb; spacefill 25%; connect (atomno=1) (atomno=3) double; connect (atomno=1) (atomno=2) double; wireframe 0.1; set echo top middle; echo "CO2"; spin on;');
+      </script>
+  </div>
+  <div id="Molec_Info">
+    <div id="Molecular_Formula">
+      Molecular Formula:
+      CO<sub>2</sub>
+    </div>
+    <div id="Lewis">
+      Lewis Structure:
+      <img src="CO2_lewis.gif"/>
+    </div>
+  </div>
+</body>
+</html>
