@@ -1,10 +1,17 @@
-  #display {
-      display:block;
+  body {
+      color: rgb(0, 0, 0);
+      background-color: unset;
+      display: inline-block;
+  }
+
+#display {
+      display:inline-block;
       border:solid;
       border-width:1px;
       border-color:grey;
       height:auto;
   }
+
   #Jmol_div {
       position:relative;
       /*display:inline-block;*/
@@ -17,18 +24,16 @@
       width:30%;
       min-width:300px;
   }
+
   #Jmol_button_div {
-      position:relative;
+      position: relative;
       /*display:inline-block;*/
-      padding:2px;
-      overflow:scroll;
-      max-height:350px;
-  }
-  body {
-      color: rgb(0, 0, 0); 
-      background-color: rgb(250, 248, 244);
+      padding: 2px;
+      overflow: scroll;
+      max-height: 350px;
   }
   .subtitle-text {
+      width:100%;
       font-weight:bold;
       text-align:center;
       font-size:1.5em;
@@ -38,7 +43,6 @@
   }
   .example-table {      
       text-align:center;
-      border:solid;
       border-top-width:1px;
       border-left-width:1px;
       border-bottom-width:1px;
@@ -51,7 +55,6 @@
   }
   .example-table td {      
       text-align:center;
-      border:solid;
       border-top-width:1px;
       border-left-width:1px;
       border-bottom-width:1px;
@@ -66,3 +69,139 @@
       text-align:right;
       font-size:0.5em;
   }
+
+  /* Accordion */
+.transition, div, ul li i:before, ul li i:after {
+  transition: all 0.25s ease-in-out;
+}
+
+/*.flipIn, ul li, h1 {
+  animation: flipdown 0.5s ease both;
+}*/
+
+/*.no-select, h2 {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}*/
+#controls ul {
+  list-style: none;
+  width: 98%;
+  padding: 0;
+  margin: 0;
+}
+#controls ul li {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  border-top: 1px dotted black;
+    border-bottom: 1px dotted black;
+}
+/*ul li:nth-of-type(1) {
+  animation-delay: 0.5s;
+}
+ul li:nth-of-type(2) {
+  animation-delay: 0.75s;
+}
+ul li:nth-of-type(3) {
+  animation-delay: 1s;
+}*/
+#controls ul li:last-of-type {
+  padding-bottom: 0;
+}
+#controls ul li i {
+  position: absolute;
+  transform: translate(-6px, 0);
+  margin-top: 2px;
+  right: 0;
+}
+#controls ul li i:before, ul li i:after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 3px;
+  height: 9px;
+}
+#controls ul li i:before {
+  transform: translate(-2px, 0) rotate(45deg);
+}
+#controls ul li i:after {
+  transform: translate(2px, 0) rotate(-45deg);
+}
+#controls ul li input[type=checkbox] {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+    touch-action: manipulation;
+}
+#controls ul li input[type=checkbox]:checked ~ .accordion-contents{
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  transform: translate(0, 50%);
+    display:none;
+}
+.accordion-contents{
+    position: relative;
+    overflow: hidden;
+    z-index:2;
+    display: inline;
+}
+
+div .accordion-contents input{
+    display:inline-flex!important;
+    position: revert!important;
+    opacity: revert!important;
+    width: revert!important;
+    height: revert!important;
+    margin: 8px!important;
+}
+
+div .accordion-contents select{
+    display: inline-flex;
+    position: revert!important;
+    opacity: revert!important;
+    width: revert!important;
+    height: revert!important;
+    margin:8px!important;
+}
+
+#controls ul li input[type=checkbox]:checked ~ i:before {
+  transform: translate(2px, 0) rotate(45deg);
+}
+#controls ul li input[type=checkbox]:checked ~ i:after {
+  transform: translate(-2px, 0) rotate(-45deg);
+}
+
+@keyframes flipdown {
+  0% {
+    opacity: 0;
+    transform-origin: top center;
+    transform: rotateX(-90deg);
+  }
+  5% {
+    opacity: 1;
+  }
+  80% {
+    transform: rotateX(8deg);
+  }
+  83% {
+    transform: rotateX(6deg);
+  }
+  92% {
+    transform: rotateX(-3deg);
+  }
+  100% {
+    transform-origin: top center;
+    transform: rotateX(0deg);
+  }
+}

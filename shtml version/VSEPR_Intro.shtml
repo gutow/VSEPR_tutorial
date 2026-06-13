@@ -12,7 +12,7 @@
 <!--#include virtual = "VSEPR_Header.html"-->
 <b>Introduction</b> <br>
 This web site is intended help you learn to estimate the shape
-of a molecule once you have determined the molecule's <u><a href="https://cms.gutow.uwosh.edu/gutow/Lewis_Tutorial/Lewis.shtml" target="noframes">Lewis
+of a molecule once you have determined the molecule's <u><a href="../../Lewis_Tutorial/Lewis.shtml" target="noframes">Lewis
 Structure</a></u>.&nbsp;
 The model used is often called the VSEPR (Valence Shell Electron Pair
 Repulsion) model and descriptions of it may be found in almost
@@ -27,7 +27,7 @@ the free program <a href="Jmol.shtml">Jmol</a>
 <p><a href="VSEPR_model.shtml"><span style="font-weight: bold;">The
 Model (VSEPR)</span></a><br>
 </p>
-<p style="text-align: right;"><small><small>Last Updated: October 26, 2021<br>
+<p style="text-align: right;"><small><small>Last Updated: June 4, 2026<br>
 Expires: ---<br>
 J. Gutow</small></small><br>
 </p>

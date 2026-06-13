@@ -9,7 +9,7 @@
 </head>
 <body>
 <br>
-<!--#include virtual = "VSEPR_Header.html"--><!--#include virtual = "../../Applets/Java/Jmol/Get_Jmol.html"-->
+<!--#include virtual = "VSEPR_Header.html"--><!--#include virtual = "../../Applets/Get_Jmol.html"-->
 <br>
 </body>
 </html>
