@@ -154,11 +154,11 @@ Jmol.Info = {
             <div class = "accordion-contents">
                 <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value)};this.value='null'">
                   <option selected="true" value="null">Choose a molecule to display</option>
-                  <option value ="load SO2.pdb; spacefill 25%;connect (atomno=1) (atomno=2) partialdouble;connect (atomno=1) (atomno=3) partialdouble; wireframe 0.1; set echo on; echo sulfur dioxide; spin on;" >Sulfur Dioxide</option>
+                  <option value ="load SO2.pdb; spacefill 25%;connect (atomno=1) (atomno=2) partialdouble;connect (atomno=1) (atomno=3) partialdouble; wireframe 0.1; set echo on; echo sulfur dioxide; spin on;" >Sulfur Dioxide*</option>
                 </select>
                 <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
                   <option selected="true" value="null">Choose a molecule to download</option>
-                  <option value ="SO2.pdb" >Sulfur Dioxide</option>
+                  <option value ="SO2.pdb" >Sulfur Dioxide*</option>
                 </select>
                 <button onclick="showdiv('AX2E_Lewis_structures')">
                     Compare Lewis structures
@@ -174,7 +174,7 @@ Jmol.Info = {
             </div>
       </li>
     </ul>
-      <div>The geometries are experimental, if available, and sourced from:<br>
+      <div>* Measured geometry (from spectroscopic measurements) sourced from:<br>
           The NIST Computational Chemistry Comparison and Benchmark Database<br>
           NIST Standard Reference Database Number 101<br>
           Release 22, May 2022, Editor: Russell D. Johnson III<br>
