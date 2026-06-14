@@ -69,6 +69,37 @@
       text-align:right;
       font-size:0.5em;
   }
+/* Popup */
+.popdiv {
+  display:inline-block;
+  position: fixed;
+  top: 5%;
+  left: 25%;
+    width:50%;
+    align-content: center;
+    text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: black;
+  background-color: white;
+  overflow: scroll;
+  z-index: 9003;
+}
+.close-icon {
+  float: right;
+  border-radius: 10px;
+}
+.hidden {
+  display: none;
+}
+.visible {
+  display: inline-block;
+}
+div .Lewis-structure {
+    border-style: groove;
+    text-align: center;
+}
 
   /* Accordion */
 .transition, div, ul li i:before, ul li i:after {
@@ -89,19 +120,21 @@
   user-select: none;
 }*/
 #controls ul {
-  list-style: none;
+  position: relative;
+    top:0px;
+    list-style: none;
   width: 98%;
   padding: 0;
   margin: 0;
 }
-#controls ul li {
+#controls li {
   position: relative;
   padding: 0;
   margin: 0;
   padding-bottom: 4px;
   padding-top: 4px;
   border-top: 1px dotted black;
-    border-bottom: 1px dotted black;
+  border-bottom: 1px dotted black;
 }
 /*ul li:nth-of-type(1) {
   animation-delay: 0.5s;

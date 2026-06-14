@@ -17,20 +17,22 @@
     width:49%;
     min-width: 200px;
     aspect-ratio: 1/1;
+   max-height: 100%;
   }
   .container {
     display: inline-flex;
     flex-wrap: wrap;
     width: 100%;
-      height: 100%;
+    height: 100%;
   }
   .mol-shape {
     display:inline-flex;
     flex-wrap: wrap;
     border-style:outset;
-    min-width: 100px;
+    min-width: 200px;
     width: 49%;
     max-height: 100%;
+    overflow: hidden;
   }
   @media (max-width: 600px){
   #JmolApp {
@@ -76,6 +78,20 @@ Jmol.Info = {
 })();
 
 </script>
+<script type="text/javascript">
+  function hidediv(divID){
+   var div= document.getElementById(divID);
+   divclass = div.getAttribute('class');
+   update = divclass.replace('visible','hidden');
+   div.setAttribute("class",update);
+  }
+  function showdiv(divID){
+    var div= document.getElementById(divID);
+    divclass = div.getAttribute('class');
+    update = divclass.replace('hidden','visible');
+    div.setAttribute("class",update);
+  }
+</script>
 </head>
 <body>
 <!--#include virtual = "VSEPR_Header.html"-->
@@ -97,13 +113,14 @@ Jmol.Info = {
   </script>
 </div>
 <div id="controls" class = "mol-shape">
+
     <ul>
         <li>
            <input type="checkbox" checked>
            <i></i>
           <h3>
               <a href="Example AX3 Molecules (Trigonal Planar)"></a>Example AX<sub>3</sub>
-              Molecules (Trigonal Planar)
+              Molecules (trigonal planar)
           </h3>
           <div class = "accordion-contents">
               <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value)};this.value='null'">
@@ -116,7 +133,9 @@ Jmol.Info = {
                   <option value ="BF3.pdb" >Boron Trifluoride</option>
                   <option value="CO3%28minus2%29.pdb">Carbonate</option>
               </select>
-              <button>Compare Lewis structures</button>
+              <button onclick="showdiv('AX3_Lewis_structures')">
+                  Compare Lewis structures
+              </button>
               <div class="Jmol-checkboxes">
                    <script>
                       Jmol.jmolCheckbox(VSEPR_Jmol,"spin on","spin off","Spin", true);
@@ -141,7 +160,9 @@ Jmol.Info = {
                   <option selected="true" value="null">Choose a molecule to download</option>
                   <option value ="SO2.pdb" >Sulfur Dioxide</option>
                 </select>
-                <button>Compare Lewis structures</button>
+                <button onclick="showdiv('AX2E_Lewis_structures')">
+                    Compare Lewis structures
+                </button>
                 <div class="Jmol-checkboxes">
                    <script>
                       Jmol.jmolCheckbox(VSEPR_Jmol,"spin on","spin off","Spin", true);
@@ -149,15 +170,35 @@ Jmol.Info = {
                       Jmol.jmolCheckbox(VSEPR_Jmol,"select S; lcaocartoon \'sp2c\'","lcaocartoon off","Show loan pair(s)", false);
                   </script>
                 </div>
+                <p>Note how loan pairs push bonds together decreasing the bond angle to < 120&deg;.</p>
             </div>
       </li>
     </ul>
-      <p>The geometries are experimental, if available, and sourced from:<br>
+      <div>The geometries are experimental, if available, and sourced from:<br>
           The NIST Computational Chemistry Comparison and Benchmark Database<br>
           NIST Standard Reference Database Number 101<br>
           Release 22, May 2022, Editor: Russell D. Johnson III<br>
           <a href="https://cccbdb.nist.gov/">https://cccbdb.nist.gov/</a>
-      </p>
+      </div>
+        <div class="popdiv hidden" id="AX3_Lewis_structures">
+        <button class="close-icon" onclick="hidediv('AX3_Lewis_structures')">X</button>
+            <h3>AX<sub>3</sub> Lewis Structures</h3>
+            <div class="container">
+                <div class="Lewis-structure"><h4>BF<sub>3</sub></h4><img src="BF3_lewis.gif"/></div>
+                <div class="Lewis-structure"><h4>CO<sub>3</sub><sup>2-</sup></h4><img src="CO3(2-)_lewis.gif"/></div>
+            </div>
+     </div>
+    <div class="popdiv hidden" id="AX2E_Lewis_structures">
+        <button class="close-icon" onclick="hidediv('AX2E_Lewis_structures')">X</button>
+        <h3>AX<sub>2</sub>E Lewis Structure</h3>
+        <div class="container">
+                <div class="Lewis-structure">
+                    <h4>SO<sub>2</sub></h4>
+                    <img src="SO2_lewis.gif"/>
+                    <p>Bottom Lewis structure is the best because of lowest formal charges.</p>
+                </div>
+            </div>
+    </div>
   </div>
 </div>
 
