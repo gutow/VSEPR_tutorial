@@ -15,7 +15,7 @@
   #JmolApp {
     display:inline-block;
     width:49%;
-    min-width: 200px;
+    min-width: 290px;
     aspect-ratio: 1/1;
    max-height: 100%;
   }
@@ -29,7 +29,7 @@
     display:inline-flex;
     flex-wrap: wrap;
     border-style:outset;
-    min-width: 200px;
+    min-width: 290px;
     width: 49%;
     max-height: 100%;
     overflow: hidden;
@@ -127,11 +127,13 @@ Jmol.Info = {
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load BF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo boron trifluoride; spin on;" >Boron Trifluoride</option>
                   <option value ="load CO3(minus2).pdb; spacefill 25%; connect (atomno=1) (atomno=3) partialdouble;connect (atomno=1) (atomno=4) partialdouble; wireframe 0.1;spin on;set echo on; echo carbonate">Carbonate</option>
+                  <option value = 'load SO3.pdb; spacefill 25%; connect (atomno=1) (atomno=2) partialdouble;connect (atomno=1) (atomno=3) partialdouble;connect (atomno=1) (atomno=4) partialdouble; wireframe 0.1; set echo on; echo sulfur trioxide; spin on;'>Sulfur Trioxide</option>
               </select>
               <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
                   <option selected="true" value="null">Choose a molecule to download</option>
                   <option value ="BF3.pdb" >Boron Trifluoride</option>
                   <option value="CO3%28minus2%29.pdb">Carbonate</option>
+                  <option value="SO3.pdb">Sulfur Trioxide</option>
               </select>
               <button onclick="showdiv('AX3_Lewis_structures')">
                   Compare Lewis structures
@@ -167,10 +169,21 @@ Jmol.Info = {
                    <script>
                       Jmol.jmolCheckbox(VSEPR_Jmol,"spin on","spin off","Spin", true);
                       Jmol.jmolCheckbox(VSEPR_Jmol,"measure allconnected (*)(*)(*)","measure off","Show angles", false);
-                      Jmol.jmolCheckbox(VSEPR_Jmol,"select S; lcaocartoon \'sp2c\'","lcaocartoon off","Show loan pair(s)", false);
+                      // Below assumes the central atom is #1
+                      Jmol.jmolCheckbox(VSEPR_Jmol,"select atomno=1; lcaocartoon \'sp2c\'","lcaocartoon off","Show loan pair(s)", false);
                   </script>
                 </div>
                 <p>Note how loan pairs push bonds together decreasing the bond angle to < 120&deg;.</p>
+            </div>
+      </li>
+      <li>
+         <input type="checkbox" checked>
+            <i></i>
+        <h3>
+            <a id="JSmol Help"></a>Molecular Viewer (JSmol) Help
+        </h3>
+            <div class = "accordion-contents">
+              <!--#include virtual = "MVInstructions.html"-->
             </div>
       </li>
     </ul>
@@ -186,6 +199,7 @@ Jmol.Info = {
             <div class="container">
                 <div class="Lewis-structure"><h4>BF<sub>3</sub></h4><img src="BF3_lewis.gif"/></div>
                 <div class="Lewis-structure"><h4>CO<sub>3</sub><sup>2-</sup></h4><img src="CO3(2-)_lewis.gif"/></div>
+                <div class="Lewis-structure"><h4>SO<sub>3</sub></h4><img src="SO3_lewis.gif"/></div>
             </div>
      </div>
     <div class="popdiv hidden" id="AX2E_Lewis_structures">
@@ -201,6 +215,5 @@ Jmol.Info = {
     </div>
   </div>
 </div>
-
 </body>
 </html>
