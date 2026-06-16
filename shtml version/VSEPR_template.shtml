@@ -173,7 +173,7 @@ Jmol.Info = {
                       Jmol.jmolCheckbox(VSEPR_Jmol,"select atomno=1; lcaocartoon \'sp2c\'","lcaocartoon off","Show loan pair(s)", false);
                   </script>
                 </div>
-                <p>Note how loan pairs push bonds together decreasing the bond angle to < 120&deg;.</p>
+                <p>Note how loan pairs repel bonds decreasing the bond angle to < 120&deg;.</p>
             </div>
       </li>
       <li>
@@ -214,6 +214,7 @@ Jmol.Info = {
             </div>
     </div>
   </div>
+    <!--#include virtual = "Last_mod_date.html"-->
 </div>
 </body>
 </html>
