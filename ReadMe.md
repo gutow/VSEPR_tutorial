@@ -10,3 +10,5 @@
         AddType text/html .shtml
         AddOutputFilter INCLUDES .shtml
 ```
+# Before release of an update
+1. Change the last updated date in the file `Last_mod_date`.

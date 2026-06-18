@@ -23,7 +23,7 @@
     display: inline-flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 100%;
+    height: 85vh;
   }
   .mol-shape {
     display:inline-flex;
@@ -102,10 +102,12 @@ Jmol.Info = {
         configuration is specified as AX<sub>3</sub> for the case with four
         total atoms and AX<sub>2</sub>E for the case with only three
         atoms. The "E" represents the electron group that is not involved
-        in bonding. Molecules of the type AX<sub>3</sub> are <a
-        href="#Example%20AX3%20Molecules%20%28Trigonal%20Planar%29">trigonal
-        planar</a> and molecules of the type AX<sub>2</sub>E are <a
-        href="#Example%20AX2E%20Molecules%20%28bent%29">bent</a>.
+        in bonding. Molecules of the type AX<sub>3</sub> are described
+        as having a <a
+        href="#Example%20AX3%20Molecules%20%28Trigonal%20Planar%29">  trigonal
+        planar</a> molecular geometry and molecules of the type AX<sub>2</sub>E are
+        described as having a <a
+        href="#Example%20AX2E%20Molecules%20%28bent%29">bent</a> molecular geometry.
   </div>
 <div id="JmolApp">
   <script type="text/javascript">
