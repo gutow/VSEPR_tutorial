@@ -1,14 +1,14 @@
-<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!DOCTYPE html>
 <html><head>
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
   <meta name="Content-Type" content="text/html; charset=iso-8859-1">
   <title>Dr. Gutow's Molecular Shapes Introduction</title>
+  <link rel="stylesheet" type="text/css" href="VSEPR.css"/>
   <meta content="J. Gutow" name="author">
   <meta content="Introduction to Dr Gutow's Molecular Shapes Web Site" name="description">
   <meta content="VSEPR, Valence Shell Electron Pair Repulsion Model, Electron Domain Model, molecular shapes, rotatable, images, jmol" name="keywords">
 </head>
-  <body style="color: rgb(0, 0, 0); background-color: rgb(250, 248, 244);" vlink="#990099" link="#000099" alink="#000099">
-
+  <body>
 <!--#include virtual = "VSEPR_Header.html"-->
 <b>Introduction</b> <br>
 This web site is intended help you learn to estimate the shape
@@ -27,10 +27,5 @@ the free program <a href="Jmol.shtml">Jmol</a>
 <p><a href="VSEPR_model.shtml"><span style="font-weight: bold;">The
 Model (VSEPR)</span></a><br>
 </p>
-<p style="text-align: right;"><small><small>Last Updated: June 4, 2026<br>
-Expires: ---<br>
-J. Gutow</small></small><br>
-</p>
-
-
+    <!--#include virtual = "Last_mod_date.html"-->
 </body></html>
