@@ -12,38 +12,7 @@
  content="VSEPR, Valence Shell Electron Pair Repulsion Model, Electron Domain Model, molecular shapes, rotatable, images, jmol"
  name="keywords">
   <style>
-  #JmolApp {
-    display:inline-block;
-    width:49%;
-    min-width: 290px;
-    aspect-ratio: 1/1;
-   max-height: 100%;
-  }
-  .container {
-    display: inline-flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 85vh;
-  }
-  .mol-shape {
-    display:inline-flex;
-    flex-wrap: wrap;
-    border-style:outset;
-    min-width: 290px;
-    width: 49%;
-    max-height: 100%;
-    overflow: hidden;
-  }
-  @media (max-width: 600px){
-  #JmolApp {
-    width:100%;
-    min-width: 300px;
-  }
-  .mol-shape {
-    min-width: 300px;
-    width: 100%;
-  }
-  }
+
   </style>
   <script type="text/javascript">
 var VSEPR_Jmol; //used to hold the applet.
@@ -95,7 +64,7 @@ Jmol.Info = {
 </head>
 <body>
 <!--#include virtual = "VSEPR_Header.html"-->
-<div class="container">
+<div class="content_container">
   <div class="subtitle-text">Trigonal Planar Electron Geometries (AX<sub>3</sub> and AX<sub>2</sub>E)</div>
     <div id="AX3-explanation" class = "explanation-text">
         Molecules in this category may have three or four atoms.&nbsp; The
@@ -198,16 +167,16 @@ Jmol.Info = {
         <div class="popdiv hidden" id="AX3_Lewis_structures">
         <button class="close-icon" onclick="hidediv('AX3_Lewis_structures')">X</button>
             <h3>AX<sub>3</sub> Lewis Structures</h3>
-            <div class="container">
-                <div class="Lewis-structure"><h4>BF<sub>3</sub></h4><img src="BF3_lewis.gif"/></div>
-                <div class="Lewis-structure"><h4>CO<sub>3</sub><sup>2-</sup></h4><img src="CO3(2-)_lewis.gif"/></div>
+            <div class="container_inline_flex">
+                <div class="Lewis-structure"><h4>BF<sub>3</sub></h4><img src="BF3_Lewis.png"/></div>
+                <div class="Lewis-structure"><h4>CO<sub>3</sub><sup>2-</sup></h4><img src="CO3_2-_Lewis.png"/></div>
                 <div class="Lewis-structure"><h4>SO<sub>3</sub></h4><img src="SO3_lewis.gif"/></div>
             </div>
      </div>
     <div class="popdiv hidden" id="AX2E_Lewis_structures">
         <button class="close-icon" onclick="hidediv('AX2E_Lewis_structures')">X</button>
         <h3>AX<sub>2</sub>E Lewis Structure</h3>
-        <div class="container">
+        <div class="container_inline_flex">
                 <div class="Lewis-structure">
                     <h4>SO<sub>2</sub></h4>
                     <img src="SO2_lewis.gif"/>

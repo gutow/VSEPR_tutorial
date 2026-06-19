@@ -65,9 +65,43 @@
       border-style:inset;
       display:table-cell;
   }
+   #JmolApp {
+    display:inline-block;
+    width:49%;
+    min-width: 290px;
+    aspect-ratio: 1/1;
+   max-height: 100%;
+  }
+  .content_container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 85vh;
+  }
+  .mol-shape {
+    display:inline-flex;
+    flex-wrap: wrap;
+    border-style:outset;
+    min-width: 290px;
+    width: 49%;
+    max-height: 100%;
+    overflow: scroll;
+  }
+  @media (max-width: 600px){
+  #JmolApp {
+    width:100%;
+    min-width: 300px;
+  }
+  .mol-shape {
+    min-width: 300px;
+    width: 100%;
+  }
+  }
+  /* Footer */
   .update-info {
       text-align:right;
       font-size:0.5em;
+      width:100%
   }
 /* Popup */
 .popdiv {
@@ -75,9 +109,9 @@
   position: fixed;
   top: 5%;
   left: 25%;
-    width:50%;
-    align-content: center;
-    text-align: center;
+  width:50%;
+  align-content: center;
+  text-align: center;
   border-width: 1px;
   border-style: solid;
   border-radius: 10px;
@@ -95,6 +129,9 @@
 }
 .visible {
   display: inline-block;
+}
+div .container_inline_flex{
+    display: inline-flex;
 }
 div .Lewis-structure {
     border-style: groove;
