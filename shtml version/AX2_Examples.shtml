@@ -127,7 +127,8 @@ Jmol.Info = {
         <button class="close-icon" onclick="hidediv('AX2_Lewis_structures')">X</button>
             <h3>AX<sub>3</sub> Lewis Structures</h3>
             <div class="container_inline_flex">
-                <div class="Lewis-structure"><h4>CO<sub>2</sub></h4><img src="CO2_lewis.gif" width="150px"/></div>
+                <div class="Lewis-structure"><h4>CO<sub>2</sub></h4><img src="CO2_lewis.gif" width="150px"
+                alt="CO2 Lewis Structure"/></div>
             </div>
      </div>
   </div>

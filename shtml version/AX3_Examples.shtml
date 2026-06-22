@@ -168,9 +168,12 @@ Jmol.Info = {
         <button class="close-icon" onclick="hidediv('AX3_Lewis_structures')">X</button>
             <h3>AX<sub>3</sub> Lewis Structures</h3>
             <div class="container_inline_flex">
-                <div class="Lewis-structure"><h4>BF<sub>3</sub></h4><img src="BF3_Lewis.png"/></div>
-                <div class="Lewis-structure"><h4>CO<sub>3</sub><sup>2-</sup></h4><img src="CO3_2-_Lewis.png"/></div>
-                <div class="Lewis-structure"><h4>SO<sub>3</sub></h4><img src="SO3_lewis.gif"/></div>
+                <div class="Lewis-structure"><h4>BF<sub>3</sub></h4><img src="BF3_Lewis.png"
+                alt="BF3 Lewis Structure"/></div>
+                <div class="Lewis-structure"><h4>CO<sub>3</sub><sup>2-</sup></h4><img src="CO3_2-_Lewis.png"
+                alt="CO3(2-) Lewis Structure"/></div>
+                <div class="Lewis-structure"><h4>SO<sub>3</sub></h4><img src="SO3_lewis.gif"
+                alt="SO3 Lewis Structure"/></div>
             </div>
      </div>
     <div class="popdiv hidden" id="AX2E_Lewis_structures">
@@ -179,7 +182,7 @@ Jmol.Info = {
         <div class="container_inline_flex">
                 <div class="Lewis-structure">
                     <h4>SO<sub>2</sub></h4>
-                    <img src="SO2_lewis.gif"/>
+                    <img src="SO2_lewis.gif" alt="SO2 Lewis Structure"/>
                     <p>Bottom Lewis structure is the best because of lowest formal charges.</p>
                 </div>
             </div>

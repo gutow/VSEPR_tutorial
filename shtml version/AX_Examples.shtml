@@ -132,9 +132,12 @@ Jmol.Info = {
         <button class="close-icon" onclick="hidediv('AX_Lewis_structures')">X</button>
             <h3>AX Lewis Structures</h3>
             <div class="container_inline_flex">
-                <div class="Lewis-structure"><h4>HCl</h4><img src="HCl_Lewis.png" width="75px"/></div>
-                <div class="Lewis-structure"><h4>CO</h4><img src="CO_lewis.gif" width="60px"/></div>
-                <div class="Lewis-structure"><h4>CN<sup>-</sup></h4><img src="CN_lewis.gif" width="100px"/></div>
+                <div class="Lewis-structure"><h4>HCl</h4><img src="HCl_Lewis.png" width="75px"
+                alt="HCl Lewis Structure"/></div>
+                <div class="Lewis-structure"><h4>CO</h4><img src="CO_lewis.gif" width="60px"
+                alt="CO Lewis Structure"/></div>
+                <div class="Lewis-structure"><h4>CN<sup>-</sup></h4><img src="CN_lewis.gif" width="100px"
+                alt="CN- Lewis Structure"/></div>
             </div>
      </div>
   </div>
