@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Template</title>
+  <link rel="stylesheet" type="text/css" href="VSEPR.css"/>
+  <script src="../../Applets/JSmol/JSmol.min.js"></script>
+  <meta content="J. Gutow" name="author">
+  <meta content="AX4 Examples" name="description">
+  <meta
+ content="VSEPR, Valence Shell Electron Pair Repulsion Model, Electron Domain Model, molecular shapes, rotatable, images, jmol"
+ name="keywords">
+  <style>
+
+  </style>
+  <script type="text/javascript">
+var VSEPR_Jmol; //used to hold the applet.
+Jmol.Info = {
+      j2sPath: "../../Applets/JSmol/j2s",
+      use: "HTML5",
+      debug: false,
+      width: "98%",
+      height: "98%",
+	  disableJ2SLoadMonitor: false,
+	  disableInitialConsole: true,
+	  serverURL: "../../Applets/JSmol/php/jsmol.php",
+	  script: "set echo middle; color echo blue; set echo on; echo Use the menus and tools |at right (widescreen) or|below (tall screen) to display| and adjust a 3D image|you can manipulate.;"
+    }
+
+;(function() {
+
+// logic is set by indicating order of USE -- default is HTML5 for this test page, though
+   var use = "HTML5 IMAGE" // WEBGL only by request by link below.
+   var s = document.location.search;
+
+   if (s.indexOf("USE=") >= 0)
+     Jmol.Info.use = s.split("USE=")[1].split("&")[0]
+   else if (s.indexOf("IMAGE") >= 0)
+     Jmol.Info.use = "IMAGE"
+   else if (s.indexOf("NOWEBGL") >= 0)
+     Jmol.Info.use = "IMAGE"
+   else if (s.indexOf("WEBGL") >= 0)
+     Jmol.Info.use = "WEBGL HTML5"
+   if (s.indexOf("NOWEBGL") >= 0)
+     Jmol.Info.use = use.replace(/WEBGL/,"")
+})();
+
+</script>
+<script type="text/javascript">
+  function hidediv(divID){
+   var div= document.getElementById(divID);
+   divclass = div.getAttribute('class');
+   update = divclass.replace('visible','hidden');
+   div.setAttribute("class",update);
+  }
+  function showdiv(divID){
+    var div= document.getElementById(divID);
+    divclass = div.getAttribute('class');
+    update = divclass.replace('hidden','visible');
+    div.setAttribute("class",update);
+  }
+</script>
+</head>
+<body>
+<!--#include virtual = "VSEPR_Header.html"-->
+<div class="content_container">
+  <div class="subtitle-text">Tetrahedral Electron Geometries (AX<sub>4</sub>, AX<sub>3</sub>E) and AX<sub>2</sub>E<sub>2</sub></div>
+    <div id="AX3-explanation" class = "explanation-text">
+        Molecules in this category may have three, four or five atoms.&nbsp;
+        The configuration is specified as AX<sub>4</sub> for the case with five
+        total atoms and AX<sub>3</sub>E for the case with four atoms and AX<sub>2</sub>E<sub>3
+        </sub>for the case with three.&nbsp; Remeber the "E" represents electron
+        group(s) that not involved in bonding, the "X" atoms around the central atom
+        and the "A" is the central atom.&nbsp; Molecules of the type AX<sub>4</sub>
+        are described as having a <a href="#Example%20AX4%20Molecules%20%28Tetrahedral%29">tetrahedral</a>,
+        molecular geometry, those of type AX<sub>3</sub>E a <a
+        href="#Example%20AX3E%20Molecules%20%28Pyramidal%29">trigonal pyramidal</a>
+        molecular geometry, and those of the type AX<sub>2</sub>E<sub>2</sub> as a <a
+        href="#Example%20AX2E2%20Molecules%20%28Bent%29">bent</a> molecular geometry.
+    </div>
+<div id="JmolApp">
+  <script type="text/javascript">
+        VSEPR_Jmol = Jmol.getApplet("VSEPR_Jmol", Jmol.Info);
+  </script>
+</div>
+<div id="controls" class = "mol-shape">
+
+    <ul>
+        <li>
+           <input type="checkbox" checked>
+           <i></i>
+          <h3>
+              <a href="Example AX4 Molecules (Tetrahedral)"></a>Example AX<sub>4</sub>
+              Molecules (tetrahedral)
+          </h3>
+          <div class = "accordion-contents">
+              <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value)};this.value='null'">
+                  <option selected="true" value="null">Choose a molecule to display</option>
+                  <option value ="load CH4.pdb; spacefill 25%; wireframe 0.1; set echo on; echo methane; spin on;" >Methane*</option>
+                  <option value ="load CCl4.pdb; spacefill 25%; wireframe 0.1;spin on;set echo on; echo carbon tetrachloride">Carbon Tetrachloride*</option>
+              </select>
+              <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
+                  <option selected="true" value="null">Choose a molecule to download</option>
+                  <option value ="CH4.pdb" >Methane*</option>
+                  <option value="CCl4.pdb">Carbon Tetrachloride*</option>
+              </select>
+              <button onclick="showdiv('AX4_Lewis_structures')">
+                  Compare Lewis structures
+              </button>
+              <div class="Jmol-checkboxes">
+                   <script>
+                      Jmol.jmolCheckbox(VSEPR_Jmol,"spin on","spin off","Spin", true);
+                      Jmol.jmolCheckbox(VSEPR_Jmol,"measure allconnected (*)(*)(*)","measure off","Show angles", false);
+                  </script>
+              </div>
+          </div>
+      </li>
+      <li>
+         <input type="checkbox" checked>
+            <i></i>
+        <h3>
+            <a id="Example AX3E Molecules (trigonal pyramidal)"></a>Example AX<sub>3</sub>E
+            Molecules (trigonal pyramidal)
+        </h3>
+            <div class = "accordion-contents">
+                <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value)};this.value='null'">
+                  <option selected="true" value="null">Choose a molecule to display</option>
+                  <option value ="load NH3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo ammonia; spin on;" >Ammonia*</option>
+                  <option value ="load NF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo nitrogen trifluoride; spin on;" >Nitrogen Triflouride*</option>
+                  <option value ="load ClO3(minus).pdb; spacefill 25%; connect (atomno=1)(atomno=2) double; connect (atomno=1)(atomno=3) double;connect (atomno=1)(atomno=4) double; wireframe 0.1; set echo on; echo chlorate; spin on;" >Chlorate</option>
+                </select>
+                <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
+                  <option selected="true" value="null">Choose a molecule to download</option>
+                  <option value="NH3.pdb">Ammonia*</option>
+                  <option value ="NF3.pdb" >Nitrogen Trifluoride*</option>
+                  <option value = "ClO3%28minus%29.pdb">Chlorate</option>
+                </select>
+                <button onclick="showdiv('AX3E3_Lewis_structures')">
+                    Compare Lewis structures
+                </button>
+                <div class="Jmol-checkboxes">
+                   <script>
+                      Jmol.jmolCheckbox(VSEPR_Jmol,"spin on","spin off","Spin", true);
+                      Jmol.jmolCheckbox(VSEPR_Jmol,"measure allconnected (*)(*)(*)","measure off","Show angles", false);
+                      // Below assumes the central atom is #1
+                      Jmol.jmolCheckbox(VSEPR_Jmol,"select atomno=1; lcaocartoon \'sp3d\'","lcaocartoon off","Show loan pair(s)", false);
+                  </script>
+                </div>
+                <p>Note how loan pairs repel bonds decreasing the bond angle to < 109.5&deg;.</p>
+            </div>
+      </li>
+      <li>
+         <input type="checkbox" checked>
+            <i></i>
+        <h3>
+            <a id="Example AX2E2 Molecules (Bent)"></a>Example AX<sub>2</sub>E<sub>2</sub>
+            Molecules (bent)
+        </h3>
+            <div class = "accordion-contents">
+                <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value)};this.value='null'">
+                  <option selected="true" value="null">Choose a molecule to display</option>
+                  <option value ="load H2O.pdb; spacefill 25%; wireframe 0.1; set echo on; echo water; spin on;" >Water*</option>
+                  <option value ="load H2S.xyz; spacefill 25%; wireframe 0.1; set echo on; echo hydrogen sulfide; spin on;" >Hydrogen Sulfide*</option>
+                </select>
+                <button onclick="showdiv('AX2E2_Lewis_structures')">
+                    Compare Lewis structures
+                </button>
+                <div class="Jmol-checkboxes">
+                   <script>
+                      Jmol.jmolCheckbox(VSEPR_Jmol,"spin on","spin off","Spin", true);
+                      Jmol.jmolCheckbox(VSEPR_Jmol,"measure allconnected (*)(*)(*)","measure off","Show angles", false);
+                      // Below assumes the central atom is #1
+                      Jmol.jmolCheckbox(VSEPR_Jmol,"select atomno=1; lcaocartoon \'sp3c\' \'sp3d\'","lcaocartoon off","Show loan pair(s)", false);
+                  </script>
+                </div>
+                <p>Note how loan pairs repel bonds decreasing the bond angle to < 109.5&deg;.</p>
+            </div>
+      </li>
+      <li>
+         <input type="checkbox" checked>
+            <i></i>
+        <h3>
+            <a id="JSmol Help"></a>Molecular Viewer (JSmol) Help
+        </h3>
+            <div class = "accordion-contents">
+              <!--#include virtual = "MVInstructions.html"-->
+            </div>
+      </li>
+    </ul>
+      <div>* Measured geometry (from spectroscopic measurements) sourced from:<br>
+          The NIST Computational Chemistry Comparison and Benchmark Database<br>
+          NIST Standard Reference Database Number 101<br>
+          Release 22, May 2022, Editor: Russell D. Johnson III<br>
+          <a href="https://cccbdb.nist.gov/">https://cccbdb.nist.gov/</a>
+          <p>Other geometries are based on estimates from quantum computations.</p>
+
+      </div>
+        <div class="popdiv hidden" id="AX4_Lewis_structures">
+        <button class="close-icon" onclick="hidediv('AX4_Lewis_structures')">X</button>
+            <h3>AX<sub>3</sub> Lewis Structures</h3>
+            <div class="container_inline_flex">
+                <div class="Lewis-structure"><h4>BF<sub>3</sub></h4><img src="BF3_Lewis.png"/></div>
+                <div class="Lewis-structure"><h4>CO<sub>3</sub><sup>2-</sup></h4><img src="CO3_2-_Lewis.png"/></div>
+                <div class="Lewis-structure"><h4>SO<sub>3</sub></h4><img src="SO3_lewis.gif"/></div>
+            </div>
+     </div>
+    <div class="popdiv hidden" id="AX3E_Lewis_structures">
+        <button class="close-icon" onclick="hidediv('AX3E_Lewis_structures')">X</button>
+        <h3>AX<sub>2</sub>E Lewis Structure</h3>
+        <div class="container_inline_flex">
+                <div class="Lewis-structure">
+                    <h4>SO<sub>2</sub></h4>
+                    <img src="SO2_lewis.gif"/>
+                    <p>Bottom Lewis structure is the best because of lowest formal charges.</p>
+                </div>
+            </div>
+    </div>
+  </div>
+    <!--#include virtual = "Last_mod_date.html"-->
+</div>
+</body>
+</html>
