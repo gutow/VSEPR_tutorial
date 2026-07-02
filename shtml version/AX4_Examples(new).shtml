@@ -105,7 +105,7 @@ Jmol.Info = {
         <label for="show_loan_pairs">Show loan pair(s)</label>
         <script>
             document.getElementById("show_loan_pairs").addEventListener("click",toggle_lone_pairs);
-            Jmol.jmolCheckbox(VSEPR_Jmol,"spacefill 100%","spacefill 25%","Show molecular surface (spacefill)", false);
+            Jmol.jmolCheckbox(VSEPR_Jmol,"select all; spacefill 100%","select all; spacefill 25%","Show molecular surface (spacefill)", false);
         </script>
     </div>
     <ul>
