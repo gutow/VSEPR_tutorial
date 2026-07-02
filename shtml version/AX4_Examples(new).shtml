@@ -60,23 +60,34 @@ Jmol.Info = {
     update = divclass.replace('hidden','visible');
     div.setAttribute("class",update);
   }
+  let loan_pairs="";
+
+  function toggle_lone_pairs(){
+    let lone_pair_checkbox = document.getElementById('show_loan_pairs');
+    // Assumes the central atom is #1
+    if (lone_pair_checkbox.checked) {
+        Jmol.script(VSEPR_Jmol, "select atomno=1; lcaocartoon "+loan_pairs);
+    } else {
+        Jmol.script(VSEPR_Jmol, "select atomno=1; lcaocartoon off");
+    }
+  }
 </script>
 </head>
 <body>
 <!--#include virtual = "VSEPR_Header.html"-->
 <div class="content_container">
-  <div class="subtitle-text">Tetrahedral Electron Geometries (AX<sub>4</sub>, AX<sub>3</sub>E) and AX<sub>2</sub>E<sub>2</sub></div>
+  <div class="subtitle-text">Tetrahedral Electron Geometries (AX<sub>4</sub>, AX<sub>3</sub>E and AX<sub>2</sub>E<sub>2</sub>)</div>
     <div id="AX3-explanation" class = "explanation-text">
         Molecules in this category may have three, four or five atoms.&nbsp;
         The configuration is specified as AX<sub>4</sub> for the case with five
         total atoms and AX<sub>3</sub>E for the case with four atoms and AX<sub>2</sub>E<sub>3
-        </sub>for the case with three.&nbsp; Remeber the "E" represents electron
-        group(s) that not involved in bonding, the "X" atoms around the central atom
-        and the "A" is the central atom.&nbsp; Molecules of the type AX<sub>4</sub>
+        </sub>for the case with three.&nbsp; Remeber "E" represents electron
+        group(s) not involved in bonding, "X" atoms around the central atom
+        and "A" is the central atom.&nbsp; Molecules of the type AX<sub>4</sub>
         are described as having a <a href="#Example%20AX4%20Molecules%20%28Tetrahedral%29">tetrahedral</a>,
-        molecular geometry, those of type AX<sub>3</sub>E a <a
+        molecular geometry, those of type AX<sub>3</sub>E as <a
         href="#Example%20AX3E%20Molecules%20%28Pyramidal%29">trigonal pyramidal</a>
-        molecular geometry, and those of the type AX<sub>2</sub>E<sub>2</sub> as a <a
+        molecular geometry, and those of the type AX<sub>2</sub>E<sub>2</sub> as <a
         href="#Example%20AX2E2%20Molecules%20%28Bent%29">bent</a> molecular geometry.
     </div>
 <div id="JmolApp">
@@ -85,7 +96,18 @@ Jmol.Info = {
   </script>
 </div>
 <div id="controls" class = "mol-shape">
-
+    <div class="Jmol-checkboxes">
+        <script>
+          Jmol.jmolCheckbox(VSEPR_Jmol,"spin on","spin off","Spin", true);
+          Jmol.jmolCheckbox(VSEPR_Jmol,"measure allconnected (*)(*)(*)","measure off","Show angles", false);
+        </script>
+        <input id="show_loan_pairs" type = "checkbox">
+        <label for="show_loan_pairs">Show loan pair(s)</label>
+        <script>
+            document.getElementById("show_loan_pairs").addEventListener("click",toggle_lone_pairs);
+            Jmol.jmolCheckbox(VSEPR_Jmol,"spacefill 100%","spacefill 25%","Show molecular surface (spacefill)", false);
+        </script>
+    </div>
     <ul>
         <li>
            <input type="checkbox" checked>
@@ -95,10 +117,10 @@ Jmol.Info = {
               Molecules (tetrahedral)
           </h3>
           <div class = "accordion-contents">
-              <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value)};this.value='null'">
+              <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value)};this.value='null';lone_pairs='';">
                   <option selected="true" value="null">Choose a molecule to display</option>
-                  <option value ="load CH4.pdb; spacefill 25%; wireframe 0.1; set echo on; echo methane; spin on;" >Methane*</option>
-                  <option value ="load CCl4.pdb; spacefill 25%; wireframe 0.1;spin on;set echo on; echo carbon tetrachloride">Carbon Tetrachloride*</option>
+                  <option value ="load CH4.pdb; spacefill 25%; wireframe 0.1; set echo on; echo methane*; spin on;" >Methane*</option>
+                  <option value ="load CCl4.pdb; spacefill 25%; wireframe 0.1;spin on;set echo on; echo carbon tetrachloride*">Carbon Tetrachloride*</option>
               </select>
               <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
                   <option selected="true" value="null">Choose a molecule to download</option>
@@ -108,12 +130,6 @@ Jmol.Info = {
               <button onclick="showdiv('AX4_Lewis_structures')">
                   Compare Lewis structures
               </button>
-              <div class="Jmol-checkboxes">
-                   <script>
-                      Jmol.jmolCheckbox(VSEPR_Jmol,"spin on","spin off","Spin", true);
-                      Jmol.jmolCheckbox(VSEPR_Jmol,"measure allconnected (*)(*)(*)","measure off","Show angles", false);
-                  </script>
-              </div>
           </div>
       </li>
       <li>
@@ -124,10 +140,10 @@ Jmol.Info = {
             Molecules (trigonal pyramidal)
         </h3>
             <div class = "accordion-contents">
-                <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value)};this.value='null'">
+                <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value)};this.value='null';loan_pairs='\'sp3d\''">
                   <option selected="true" value="null">Choose a molecule to display</option>
-                  <option value ="load NH3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo ammonia; spin on;" >Ammonia*</option>
-                  <option value ="load NF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo nitrogen trifluoride; spin on;" >Nitrogen Triflouride*</option>
+                  <option value ="load NH3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo ammonia*; spin on;" >Ammonia*</option>
+                  <option value ="load NF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo nitrogen trifluoride*; spin on;" >Nitrogen Triflouride*</option>
                   <option value ="load ClO3(minus).pdb; spacefill 25%; connect (atomno=1)(atomno=2) double; connect (atomno=1)(atomno=3) double;connect (atomno=1)(atomno=4) double; wireframe 0.1; set echo on; echo chlorate; spin on;" >Chlorate</option>
                 </select>
                 <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
@@ -139,14 +155,6 @@ Jmol.Info = {
                 <button onclick="showdiv('AX3E3_Lewis_structures')">
                     Compare Lewis structures
                 </button>
-                <div class="Jmol-checkboxes">
-                   <script>
-                      Jmol.jmolCheckbox(VSEPR_Jmol,"spin on","spin off","Spin", true);
-                      Jmol.jmolCheckbox(VSEPR_Jmol,"measure allconnected (*)(*)(*)","measure off","Show angles", false);
-                      // Below assumes the central atom is #1
-                      Jmol.jmolCheckbox(VSEPR_Jmol,"select atomno=1; lcaocartoon \'sp3d\'","lcaocartoon off","Show loan pair(s)", false);
-                  </script>
-                </div>
                 <p>Note how loan pairs repel bonds decreasing the bond angle to < 109.5&deg;.</p>
             </div>
       </li>
@@ -158,22 +166,19 @@ Jmol.Info = {
             Molecules (bent)
         </h3>
             <div class = "accordion-contents">
-                <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value)};this.value='null'">
+                <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value)};this.value='null';loan_pairs='\'sp3c\' \'sp3d\''">
                   <option selected="true" value="null">Choose a molecule to display</option>
-                  <option value ="load H2O.pdb; spacefill 25%; wireframe 0.1; set echo on; echo water; spin on;" >Water*</option>
-                  <option value ="load H2S.xyz; spacefill 25%; wireframe 0.1; set echo on; echo hydrogen sulfide; spin on;" >Hydrogen Sulfide*</option>
+                  <option value ="load H2O.pdb; spacefill 25%; wireframe 0.1; set echo on; echo water*; spin on;" >Water*</option>
+                  <option value ="load H2S.xyz; spacefill 25%; wireframe 0.1; set echo on; echo hydrogen sulfide*; spin on;" >Hydrogen Sulfide*</option>
+                </select>
+                <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
+                  <option selected="true" value="null">Choose a molecule to download</option>
+                  <option value="H2O.pdb">Water*</option>
+                  <option value ="H2S.xyz" >Hydrogen Sulfide*</option>
                 </select>
                 <button onclick="showdiv('AX2E2_Lewis_structures')">
                     Compare Lewis structures
                 </button>
-                <div class="Jmol-checkboxes">
-                   <script>
-                      Jmol.jmolCheckbox(VSEPR_Jmol,"spin on","spin off","Spin", true);
-                      Jmol.jmolCheckbox(VSEPR_Jmol,"measure allconnected (*)(*)(*)","measure off","Show angles", false);
-                      // Below assumes the central atom is #1
-                      Jmol.jmolCheckbox(VSEPR_Jmol,"select atomno=1; lcaocartoon \'sp3c\' \'sp3d\'","lcaocartoon off","Show loan pair(s)", false);
-                  </script>
-                </div>
                 <p>Note how loan pairs repel bonds decreasing the bond angle to < 109.5&deg;.</p>
             </div>
       </li>
