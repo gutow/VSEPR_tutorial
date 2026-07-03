@@ -88,8 +88,8 @@ Jmol.Info = {
         <li>
            <input type="checkbox" checked>
            <i></i>
-          <h3>
-              <a href="Example AX4 Molecules (Tetrahedral)"></a>Example AX<sub>4</sub>
+          <h3 id="Example AX4 Molecules (Tetrahedral)">
+              Example AX<sub>4</sub>
               Molecules (tetrahedral)
           </h3>
           <div class = "accordion-contents">
@@ -111,8 +111,8 @@ Jmol.Info = {
       <li>
          <input type="checkbox" checked>
             <i></i>
-        <h3>
-            <a id="Example AX3E Molecules (trigonal pyramidal)"></a>Example AX<sub>3</sub>E
+        <h3 id="Example AX3E Molecules (Pyramidal)">
+            Example AX<sub>3</sub>E
             Molecules (trigonal pyramidal)
         </h3>
             <div class = "accordion-contents">
@@ -128,7 +128,7 @@ Jmol.Info = {
                   <option value ="NF3.pdb" >Nitrogen Trifluoride*</option>
                   <option value = "ClO3%28minus%29.pdb">Chlorate</option>
                 </select>
-                <button onclick="showdiv('AX3E3_Lewis_structures')">
+                <button onclick="showdiv('AX3E_Lewis_structures')">
                     Compare Lewis structures
                 </button>
                 <p>Note how loan pairs repel bonds decreasing the bond angle to < 109.5&deg;.</p>
@@ -137,8 +137,8 @@ Jmol.Info = {
       <li>
          <input type="checkbox" checked>
             <i></i>
-        <h3>
-            <a id="Example AX2E2 Molecules (Bent)"></a>Example AX<sub>2</sub>E<sub>2</sub>
+        <h3 id="Example AX2E2 Molecules (Bent)">
+            Example AX<sub>2</sub>E<sub>2</sub>
             Molecules (bent)
         </h3>
             <div class = "accordion-contents">
@@ -162,7 +162,7 @@ Jmol.Info = {
          <input type="checkbox" checked>
             <i></i>
         <h3>
-            <a id="JSmol Help"></a>Molecular Viewer (JSmol) Help
+            <a id="JSmol Help"></a>Molecular Viewer Help
         </h3>
             <div class = "accordion-contents">
               <!--#include virtual = "MVInstructions.html"-->
@@ -181,21 +181,43 @@ Jmol.Info = {
         <button class="close-icon" onclick="hidediv('AX4_Lewis_structures')">X</button>
             <h3>AX<sub>3</sub> Lewis Structures</h3>
             <div class="container_inline_flex">
-                <div class="Lewis-structure"><h4>BF<sub>3</sub></h4><img src="BF3_Lewis.png"/></div>
-                <div class="Lewis-structure"><h4>CO<sub>3</sub><sup>2-</sup></h4><img src="CO3_2-_Lewis.png"/></div>
-                <div class="Lewis-structure"><h4>SO<sub>3</sub></h4><img src="SO3_lewis.gif"/></div>
+                <div class="Lewis-structure"><h4>CH<sub>4</sub></h4><img src="CH4_lewis.gif"
+                width="150px" alt="methane Lewis structure"/></div>
+                <div class="Lewis-structure"><h4>CCl<sub>4</sub></h4><img src="CCl4_lewis.gif"
+                width="150px" alt="carbon tetrachloride lewis structure"/></div>
             </div>
      </div>
     <div class="popdiv hidden" id="AX3E_Lewis_structures">
         <button class="close-icon" onclick="hidediv('AX3E_Lewis_structures')">X</button>
-        <h3>AX<sub>2</sub>E Lewis Structure</h3>
+        <h3>AX<sub>3</sub>E Lewis Structure</h3>
         <div class="container_inline_flex">
                 <div class="Lewis-structure">
-                    <h4>SO<sub>2</sub></h4>
-                    <img src="SO2_lewis.gif"/>
-                    <p>Bottom Lewis structure is the best because of lowest formal charges.</p>
+                    <h4>NH<sub>3</sub></h4>
+                    <img src="NH3_lewis.gif" alt="NH3 Lewis structure"/>
                 </div>
-            </div>
+                <div class="Lewis-structure">
+                    <h4>NF<sub>3</sub></h4>
+                    <img src="NF3_lewis.gif" alt="NF3 Lewis structure"/>
+                </div>
+                <div class="Lewis-structure">
+                    <h4>ClO<sub>3</sub><sup>-</sup></h4>
+                    <img src="ClO3%28minus%29_lewis.gif" alt="chlorate Lewis structure"/>
+                </div>
+        </div>
+    </div>
+        <div class="popdiv hidden" id="AX2E2_Lewis_structures">
+        <button class="close-icon" onclick="hidediv('AX2E2_Lewis_structures')">X</button>
+        <h3>AX<sub>3</sub>E Lewis Structure</h3>
+        <div class="container_inline_flex">
+                <div class="Lewis-structure">
+                    <h4>H<sub>2</sub>O</h4>
+                    <img src="H2O_lewis.gif" alt="water Lewis structure"/>
+                </div>
+                <div class="Lewis-structure">
+                    <h4>H<sub>2</sub>S</h4>
+                    <img src="H2S_lewis.gif" alt="H2S Lewis structure"/>
+                </div>
+        </div>
     </div>
   </div>
     <!--#include virtual = "Last_mod_date.html"-->
