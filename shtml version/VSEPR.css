@@ -3,6 +3,75 @@
       background-color: unset;
       display: inline-block;
   }
+/* Header styling*/
+
+#top-level-nav {
+  border-color:#ccc;
+  border-style:solid;
+  border-width:0;
+  left:0;
+  padding:0;
+  margin:0;
+  position:relative;
+  top:2px;
+  width:100%;
+  background:linear-gradient(to bottom, #777,#000);
+  background-color:#333;
+  color:#eee;
+  display:inline-block;
+  }
+#top-level-nav li {
+  border-left:1px solid #ccc;
+  float:left;
+  margin: 0;
+  background:linear-gradient(to bottom, #777,#000);
+  background-color:#333;
+  list-style-type:none;
+  font-size:0.85em;
+  }
+#top-level-nav li:first-child {
+  border-left: 0;
+  float:left;
+  background:linear-gradient(to bottom, #777,#000);
+  background-color:#333;
+  }
+#top-level-nav li a {
+  color:#ccc;
+  display:block;
+  padding:4px 3px 3px;
+  text-decoration:none;
+  }
+#top-level-nav li a:hover {
+  background-color:#f6f6f6;
+  border:0;
+  color:#000;
+  }
+#portal-header {
+  position:relative;
+  display:inline-block;
+  left:0px;
+  width:100%;
+  padding:5px 0px 3px 0px;
+  border-bottom:solid;
+  border-bottom-color:#eee;
+  border-bottom-width:1px;
+  margin-bottom:8px;
+  }
+#portal-logo img {
+  display:inline-block;
+  vertical-align:middle;
+  box-shadow: 2px 2px 2px #ccc;
+  }
+#page-title {
+    display:inline-block;
+    margin:5px 1px 1px 5px;
+    width:100%;
+    text-align:center;
+  }
+.title-text {
+    font-size:2em;
+    font-weight:bold;
+}
 
 #display {
       display:inline-block;

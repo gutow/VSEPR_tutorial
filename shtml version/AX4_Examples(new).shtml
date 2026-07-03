@@ -6,6 +6,7 @@
   <title>Template</title>
   <link rel="stylesheet" type="text/css" href="VSEPR.css"/>
   <script src="../../Applets/JSmol/JSmol.min.js"></script>
+  <script src="VSEPR.js"></script>
   <meta content="J. Gutow" name="author">
   <meta content="AX4 Examples" name="description">
   <meta
@@ -46,31 +47,6 @@ Jmol.Info = {
      Jmol.Info.use = use.replace(/WEBGL/,"")
 })();
 
-</script>
-<script type="text/javascript">
-  function hidediv(divID){
-   var div= document.getElementById(divID);
-   divclass = div.getAttribute('class');
-   update = divclass.replace('visible','hidden');
-   div.setAttribute("class",update);
-  }
-  function showdiv(divID){
-    var div= document.getElementById(divID);
-    divclass = div.getAttribute('class');
-    update = divclass.replace('hidden','visible');
-    div.setAttribute("class",update);
-  }
-  let loan_pairs="";
-
-  function toggle_lone_pairs(){
-    let lone_pair_checkbox = document.getElementById('show_loan_pairs');
-    // Assumes the central atom is #1
-    if (lone_pair_checkbox.checked) {
-        Jmol.script(VSEPR_Jmol, "select atomno=1; lcaocartoon "+loan_pairs);
-    } else {
-        Jmol.script(VSEPR_Jmol, "select atomno=1; lcaocartoon off");
-    }
-  }
 </script>
 </head>
 <body>
