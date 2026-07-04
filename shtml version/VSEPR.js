@@ -16,7 +16,7 @@ function toggle_lone_pairs(){
     let lone_pair_checkbox = document.getElementById('show_loan_pairs');
     // Assumes the central atom is #1
     if (lone_pair_checkbox.checked) {
-        Jmol.script(VSEPR_Jmol, "select atomno=1; lcaocartoon "+loan_pairs);
+        Jmol.script(VSEPR_Jmol, "select atomno=1; lcaocartoon "+lone_pairs);
     } else {
         Jmol.script(VSEPR_Jmol, "select atomno=1; lcaocartoon off");
     }

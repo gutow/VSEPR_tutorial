@@ -12,10 +12,7 @@
   <meta
  content="VSEPR, Valence Shell Electron Pair Repulsion Model, Electron Domain Model, molecular shapes, rotatable, images, jmol"
  name="keywords">
-  <style>
-
-  </style>
-  <script type="text/javascript">
+<script type="text/javascript">
 var VSEPR_Jmol; //used to hold the applet.
 Jmol.Info = {
       j2sPath: "../../Applets/JSmol/j2s",
@@ -46,7 +43,6 @@ Jmol.Info = {
    if (s.indexOf("NOWEBGL") >= 0)
      Jmol.Info.use = use.replace(/WEBGL/,"")
 })();
-
 </script>
 </head>
 <body>
@@ -57,7 +53,7 @@ Jmol.Info = {
         Molecules in this category may have three, four or five atoms.&nbsp;
         The configuration is specified as AX<sub>4</sub> for the case with five
         total atoms and AX<sub>3</sub>E for the case with four atoms and AX<sub>2</sub>E<sub>3
-        </sub>for the case with three.&nbsp; Remeber "E" represents electron
+        </sub>for the case with three.&nbsp; Remember "E" represents electron
         group(s) not involved in bonding, "X" atoms around the central atom
         and "A" is the central atom.&nbsp; Molecules of the type AX<sub>4</sub>
         are described as having a <a href="#Example%20AX4%20Molecules%20%28Tetrahedral%29">tetrahedral</a>,
@@ -93,7 +89,7 @@ Jmol.Info = {
               Molecules (tetrahedral)
           </h3>
           <div class = "accordion-contents">
-              <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value)};this.value='null';lone_pairs='';">
+              <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value);lone_pairs='off';};this.value='null';">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load CH4.pdb; spacefill 25%; wireframe 0.1; set echo on; echo methane*; spin on;" >Methane*</option>
                   <option value ="load CCl4.pdb; spacefill 25%; wireframe 0.1;spin on;set echo on; echo carbon tetrachloride*">Carbon Tetrachloride*</option>
@@ -116,7 +112,7 @@ Jmol.Info = {
             Molecules (trigonal pyramidal)
         </h3>
             <div class = "accordion-contents">
-                <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value)};this.value='null';loan_pairs='\'sp3d\''">
+                <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value);lone_pairs='\'sp3d\'';};this.value='null';">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load NH3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo ammonia*; spin on;" >Ammonia*</option>
                   <option value ="load NF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo nitrogen trifluoride*; spin on;" >Nitrogen Triflouride*</option>
@@ -142,7 +138,7 @@ Jmol.Info = {
             Molecules (bent)
         </h3>
             <div class = "accordion-contents">
-                <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value)};this.value='null';loan_pairs='\'sp3c\' \'sp3d\''">
+                <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value);lone_pairs='\'sp3c\' \'sp3d\'';};this.value='null';">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load H2O.pdb; spacefill 25%; wireframe 0.1; set echo on; echo water*; spin on;" >Water*</option>
                   <option value ="load H2S.xyz; spacefill 25%; wireframe 0.1; set echo on; echo hydrogen sulfide*; spin on;" >Hydrogen Sulfide*</option>
