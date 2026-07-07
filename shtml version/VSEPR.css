@@ -110,6 +110,9 @@
   .explanation-text {
       margin:2px;
   }
+  .Ref\&Tech {
+      display:inline-block;
+  }
   .example-table {      
       text-align:center;
       border-top-width:1px;

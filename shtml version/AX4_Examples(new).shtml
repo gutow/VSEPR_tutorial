@@ -69,15 +69,19 @@ Jmol.Info = {
 </div>
 <div id="controls" class = "mol-shape">
     <div class="Jmol-checkboxes">
-        <script>
-          Jmol.jmolCheckbox(VSEPR_Jmol,"spin on","spin off","Spin", true);
-          Jmol.jmolCheckbox(VSEPR_Jmol,"measure allconnected (*)(*)(*)","measure off","Show angles", false);
-        </script>
+        <input id="spin" type="checkbox" checked>
+        <label for="spin">Spin</label>
+        <input id="angles" type="checkbox">
+        <label for="angles">Show angles</label>
         <input id="show_loan_pairs" type = "checkbox">
         <label for="show_loan_pairs">Show loan pair(s)</label>
+        <input id="spacefill" type="checkbox">
+        <label for="spacefill">Show molecular surface (spacefill)</label>
         <script>
+            document.getElementById("spin").addEventListener("click",toggle_spin);
+            document.getElementById("angles").addEventListener("click",toggle_angles);
             document.getElementById("show_loan_pairs").addEventListener("click",toggle_lone_pairs);
-            Jmol.jmolCheckbox(VSEPR_Jmol,"select all; spacefill 100%","select all; spacefill 25%","Show molecular surface (spacefill)", false);
+            document.getElementById("spacefill").addEventListener("click",toggle_spacefill);
         </script>
     </div>
     <ul>
@@ -89,10 +93,10 @@ Jmol.Info = {
               Molecules (tetrahedral)
           </h3>
           <div class = "accordion-contents">
-              <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value);lone_pairs='off';};this.value='null';">
+              <select onchange="if (this.value !='null') {load_molecule(this.value,'off')};this.value='null';">
                   <option selected="true" value="null">Choose a molecule to display</option>
-                  <option value ="load CH4.pdb; spacefill 25%; wireframe 0.1; set echo on; echo methane*; spin on;" >Methane*</option>
-                  <option value ="load CCl4.pdb; spacefill 25%; wireframe 0.1;spin on;set echo on; echo carbon tetrachloride*">Carbon Tetrachloride*</option>
+                  <option value ="load CH4.pdb; spacefill 25%; wireframe 0.1; set echo on; echo methane*;" >Methane*</option>
+                  <option value ="load CCl4.pdb; spacefill 25%; wireframe 0.1;set echo on; echo carbon tetrachloride*">Carbon Tetrachloride*</option>
               </select>
               <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
                   <option selected="true" value="null">Choose a molecule to download</option>
@@ -112,11 +116,11 @@ Jmol.Info = {
             Molecules (trigonal pyramidal)
         </h3>
             <div class = "accordion-contents">
-                <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value);lone_pairs='\'sp3d\'';};this.value='null';">
+                <select onchange="if (this.value !='null') {load_molecule(this.value,'\'sp3d\'')};this.value='null';">
                   <option selected="true" value="null">Choose a molecule to display</option>
-                  <option value ="load NH3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo ammonia*; spin on;" >Ammonia*</option>
-                  <option value ="load NF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo nitrogen trifluoride*; spin on;" >Nitrogen Triflouride*</option>
-                  <option value ="load ClO3(minus).pdb; spacefill 25%; connect (atomno=1)(atomno=2) double; connect (atomno=1)(atomno=3) double;connect (atomno=1)(atomno=4) double; wireframe 0.1; set echo on; echo chlorate; spin on;" >Chlorate</option>
+                  <option value ="load NH3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo ammonia*;" >Ammonia*</option>
+                  <option value ="load NF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo nitrogen trifluoride*;" >Nitrogen Triflouride*</option>
+                  <option value ="load ClO3(minus).pdb; spacefill 25%; connect (atomno=1)(atomno=2) double; connect (atomno=1)(atomno=3) double;connect (atomno=1)(atomno=4) double; wireframe 0.1; set echo on; echo chlorate;" >Chlorate</option>
                 </select>
                 <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
                   <option selected="true" value="null">Choose a molecule to download</option>
@@ -138,10 +142,10 @@ Jmol.Info = {
             Molecules (bent)
         </h3>
             <div class = "accordion-contents">
-                <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value);lone_pairs='\'sp3c\' \'sp3d\'';};this.value='null';">
+                <select onchange="if (this.value !='null') {load_molecule(this.value, '\'sp3c\' \'sp3d\'')};this.value='null';">
                   <option selected="true" value="null">Choose a molecule to display</option>
-                  <option value ="load H2O.pdb; spacefill 25%; wireframe 0.1; set echo on; echo water*; spin on;" >Water*</option>
-                  <option value ="load H2S.xyz; spacefill 25%; wireframe 0.1; set echo on; echo hydrogen sulfide*; spin on;" >Hydrogen Sulfide*</option>
+                  <option value ="load H2O.pdb; spacefill 25%; wireframe 0.1; set echo on; echo water*;" >Water*</option>
+                  <option value ="load H2S.xyz; spacefill 25%; wireframe 0.1; set echo on; echo hydrogen sulfide*;" >Hydrogen Sulfide*</option>
                 </select>
                 <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
                   <option selected="true" value="null">Choose a molecule to download</option>
@@ -165,7 +169,9 @@ Jmol.Info = {
             </div>
       </li>
     </ul>
-      <div>* Measured geometry (from spectroscopic measurements) sourced from:<br>
+    <div class="Ref&Tech">
+        <h3>Reference and Technical Info</h3>
+      <p>* Measured geometry (from spectroscopic measurements) sourced from:<br>
           The NIST Computational Chemistry Comparison and Benchmark Database<br>
           NIST Standard Reference Database Number 101<br>
           Release 22, May 2022, Editor: Russell D. Johnson III<br>
