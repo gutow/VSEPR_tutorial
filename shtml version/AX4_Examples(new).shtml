@@ -195,15 +195,15 @@ Jmol.Info = {
         <div class="container_inline_flex">
                 <div class="Lewis-structure">
                     <h4>NH<sub>3</sub></h4>
-                    <img src="NH3_lewis.gif" alt="NH3 Lewis structure"/>
+                    <img src="NH3_lewis.png" alt="NH3 Lewis structure"/>
                 </div>
                 <div class="Lewis-structure">
                     <h4>NF<sub>3</sub></h4>
-                    <img src="NF3_lewis.gif" alt="NF3 Lewis structure"/>
+                    <img src="NF3_lewis.png" alt="NF3 Lewis structure"/>
                 </div>
                 <div class="Lewis-structure">
                     <h4>ClO<sub>3</sub><sup>-</sup></h4>
-                    <img src="ClO3%28minus%29_lewis.gif" alt="chlorate Lewis structure"/>
+                    <img src="ClO3%28minus%29_lewis.png" alt="chlorate Lewis structure"/>
                 </div>
         </div>
     </div>
@@ -213,11 +213,11 @@ Jmol.Info = {
         <div class="container_inline_flex">
                 <div class="Lewis-structure">
                     <h4>H<sub>2</sub>O</h4>
-                    <img src="H2O_lewis.gif" alt="water Lewis structure"/>
+                    <img src="H2O_lewis.png" alt="water Lewis structure"/>
                 </div>
                 <div class="Lewis-structure">
                     <h4>H<sub>2</sub>S</h4>
-                    <img src="H2S_lewis.gif" alt="H2S Lewis structure"/>
+                    <img src="H2S_lewis.png" alt="H2S Lewis structure"/>
                 </div>
         </div>
     </div>
