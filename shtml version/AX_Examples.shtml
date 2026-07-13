@@ -72,7 +72,6 @@ Jmol.Info = {
         <label for="spacefill">Show molecular surface (spacefill)</label>
         <script>
             document.getElementById("spin").addEventListener("click",toggle_spin);
-            document.getElementById("angles").addEventListener("click",toggle_angles);
             document.getElementById("spacefill").addEventListener("click",toggle_spacefill);
         </script>
     </div>
