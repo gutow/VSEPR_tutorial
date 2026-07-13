@@ -122,11 +122,15 @@ Jmol.Info = {
             </div>
       </li>
     </ul>
-      <div>* Measured geometry (from spectroscopic measurements) sourced from:<br>
+    <div class="Ref&Tech">
+        <h3>Reference and Technical Info</h3>
+      <p>* Measured geometry (from spectroscopic measurements) sourced from:<br>
           The NIST Computational Chemistry Comparison and Benchmark Database<br>
           NIST Standard Reference Database Number 101<br>
           Release 22, May 2022, Editor: Russell D. Johnson III<br>
           <a href="https://cccbdb.nist.gov/">https://cccbdb.nist.gov/</a>
+          <p>Other geometries are based on estimates from quantum computations.</p>
+
       </div>
         <div class="popdiv hidden" id="AX_Lewis_structures">
         <button class="close-icon" onclick="hidediv('AX_Lewis_structures')">X</button>

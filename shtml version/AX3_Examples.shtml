@@ -95,7 +95,7 @@ Jmol.Info = {
               <select onchange="if (this.value !='null') {load_molecule(this.value,'off')};this.value='null'">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load BF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo boron trifluoride;" >Boron Trifluoride</option>
-                  <option value ="load CO3(minus2).pdb; spacefill 25%; connect (atomno=1) (atomno=3) partialdouble;connect (atomno=1) (atomno=4) partialdouble; wireframe 0.1;set echo on; echo carbonate">Carbonate</option>
+                  <option value ="load CO3(minus2).pdb; spacefill 25%; connect (atomno=1) (atomno=2) partialdouble; connect (atomno=1) (atomno=3) partialdouble;connect (atomno=1) (atomno=4) partialdouble; wireframe 0.1;set echo on; echo carbonate">Carbonate</option>
                   <option value = 'load SO3.pdb; spacefill 25%; connect (atomno=1) (atomno=2) partialdouble;connect (atomno=1) (atomno=3) partialdouble;connect (atomno=1) (atomno=4) partialdouble; wireframe 0.1; set echo on; echo sulfur trioxide;'>Sulfur Trioxide</option>
               </select>
               <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
@@ -159,7 +159,10 @@ Jmol.Info = {
                 <div class="Lewis-structure"><h4>BF<sub>3</sub></h4><img src="BF3_Lewis.png"
                 alt="BF3 Lewis Structure"/></div>
                 <div class="Lewis-structure"><h4>CO<sub>3</sub><sup>2-</sup></h4><img src="CO3_2-_Lewis.png"
-                alt="CO3(2-) Lewis Structure"/></div>
+                alt="CO3(2-) Lewis Structure"/>
+                    <p>Three equivalent resonance structures where the double bond
+                is to a different O atom.</p>
+                </div>
                 <div class="Lewis-structure"><h4>SO<sub>3</sub></h4><img src="SO3_lewis.gif"
                 alt="SO3 Lewis Structure"/></div>
             </div>
