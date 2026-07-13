@@ -6,14 +6,12 @@
   <title>AX Examples</title>
   <link rel="stylesheet" type="text/css" href="VSEPR.css"/>
   <script src="../../Applets/JSmol/JSmol.min.js"></script>
+  <script src="VSEPR.js"></script>
   <meta content="J. Gutow" name="author">
   <meta content="VSEPR template" name="description">
   <meta
  content="VSEPR, Valence Shell Electron Pair Repulsion Model, Electron Domain Model, molecular shapes, rotatable, images, jmol"
  name="keywords">
-  <style>
-
-  </style>
   <script type="text/javascript">
 var VSEPR_Jmol; //used to hold the applet.
 Jmol.Info = {
@@ -45,21 +43,6 @@ Jmol.Info = {
    if (s.indexOf("NOWEBGL") >= 0)
      Jmol.Info.use = use.replace(/WEBGL/,"")
 })();
-
-</script>
-<script type="text/javascript">
-  function hidediv(divID){
-   var div= document.getElementById(divID);
-   divclass = div.getAttribute('class');
-   update = divclass.replace('visible','hidden');
-   div.setAttribute("class",update);
-  }
-  function showdiv(divID){
-    var div= document.getElementById(divID);
-    divclass = div.getAttribute('class');
-    update = divclass.replace('hidden','visible');
-    div.setAttribute("class",update);
-  }
 </script>
 </head>
 <body>
@@ -78,7 +61,21 @@ Jmol.Info = {
   </script>
 </div>
 <div id="controls" class = "mol-shape">
-
+    <div class="Jmol-checkboxes">
+        <input id="spin" type="checkbox" checked>
+        <label for="spin">Spin</label>
+        <input id="angles" type="checkbox">
+        <label for="angles">Show angles</label>
+        <input id="show_loan_pairs" type = "checkbox">
+        <label for="show_loan_pairs">Show loan pair(s)</label>
+        <input id="spacefill" type="checkbox">
+        <label for="spacefill">Show molecular surface (spacefill)</label>
+        <script>
+            document.getElementById("spin").addEventListener("click",toggle_spin);
+            document.getElementById("angles").addEventListener("click",toggle_angles);
+            document.getElementById("spacefill").addEventListener("click",toggle_spacefill);
+        </script>
+    </div>
     <ul>
         <li>
            <input type="checkbox" checked>
@@ -88,11 +85,11 @@ Jmol.Info = {
               Molecules (linear)
           </h3>
           <div class = "accordion-contents">
-              <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value)};this.value='null'">
+              <select onchange="if (this.value !='null') {load_molecule(this.value,'off')};this.value='null'">
                   <option selected="true" value="null">Choose a molecule to display</option>
-                  <option value ="load HCl.xyz; spacefill 25%; wireframe 0.1; set echo on; echo hydrogen chloride; spin on;" >Hydrogen Chloride</option>
-                  <option value ="load CO.pdb; spacefill 25%; connect triple; wireframe 0.1;spin on;set echo on; echo carbon monoxide")>Carbon Monoxide</option>
-                  <option value = "load CN(minus1).pdb; spacefill 25%; connect triple; wireframe 0.1; set echo on; echo cyanide; spin on;">Cynaide</option>
+                  <option value ="load HCl.xyz; spacefill 25%; wireframe 0.1; set echo on; echo hydrogen chloride;" >Hydrogen Chloride</option>
+                  <option value ="load CO.pdb; spacefill 25%; connect triple; wireframe 0.1;set echo on; echo carbon monoxide")>Carbon Monoxide</option>
+                  <option value = "load CN(minus1).pdb; spacefill 25%; connect triple; wireframe 0.1; set echo on; echo cyanide;">Cynaide</option>
               </select>
               <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
                   <option selected="true" value="null">Choose a molecule to download</option>
@@ -103,12 +100,6 @@ Jmol.Info = {
               <button onclick="showdiv('AX_Lewis_structures')">
                   Compare Lewis structures
               </button>
-              <div class="Jmol-checkboxes">
-                   <script>
-                      Jmol.jmolCheckbox(VSEPR_Jmol,"spin on","spin off","Spin", true);
-                      /* Not needed for diatomic: Jmol.jmolCheckbox(VSEPR_Jmol,"measure allconnected (*)(*)(*)","measure off","Show angles", false);*/
-                  </script>
-              </div>
           </div>
       </li>
       <li>
