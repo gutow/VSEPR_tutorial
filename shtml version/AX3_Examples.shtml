@@ -6,14 +6,12 @@
   <title>AX3 Examples</title>
   <link rel="stylesheet" type="text/css" href="VSEPR.css"/>
   <script src="../../Applets/JSmol/JSmol.min.js"></script>
+  <script src="VSEPR.js"></script>
   <meta content="J. Gutow" name="author">
-  <meta content="VSEPR template" name="description">
+  <meta content="AX3 Examples" name="description">
   <meta
  content="VSEPR, Valence Shell Electron Pair Repulsion Model, Electron Domain Model, molecular shapes, rotatable, images, jmol"
  name="keywords">
-  <style>
-
-  </style>
   <script type="text/javascript">
 var VSEPR_Jmol; //used to hold the applet.
 Jmol.Info = {
@@ -45,21 +43,6 @@ Jmol.Info = {
    if (s.indexOf("NOWEBGL") >= 0)
      Jmol.Info.use = use.replace(/WEBGL/,"")
 })();
-
-</script>
-<script type="text/javascript">
-  function hidediv(divID){
-   var div= document.getElementById(divID);
-   divclass = div.getAttribute('class');
-   update = divclass.replace('visible','hidden');
-   div.setAttribute("class",update);
-  }
-  function showdiv(divID){
-    var div= document.getElementById(divID);
-    divclass = div.getAttribute('class');
-    update = divclass.replace('hidden','visible');
-    div.setAttribute("class",update);
-  }
 </script>
 </head>
 <body>
@@ -84,7 +67,22 @@ Jmol.Info = {
   </script>
 </div>
 <div id="controls" class = "mol-shape">
-
+    <div class="Jmol-checkboxes">
+        <input id="spin" type="checkbox" checked>
+        <label for="spin">Spin</label>
+        <input id="angles" type="checkbox">
+        <label for="angles">Show angles</label>
+        <input id="show_loan_pairs" type = "checkbox">
+        <label for="show_loan_pairs">Show loan pair(s)</label>
+        <input id="spacefill" type="checkbox">
+        <label for="spacefill">Show molecular surface (spacefill)</label>
+        <script>
+            document.getElementById("spin").addEventListener("click",toggle_spin);
+            document.getElementById("angles").addEventListener("click",toggle_angles);
+            document.getElementById("show_loan_pairs").addEventListener("click",toggle_lone_pairs);
+            document.getElementById("spacefill").addEventListener("click",toggle_spacefill);
+        </script>
+    </div>
     <ul>
         <li>
            <input type="checkbox" checked>
@@ -94,11 +92,11 @@ Jmol.Info = {
               Molecules (trigonal planar)
           </h3>
           <div class = "accordion-contents">
-              <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value)};this.value='null'">
+              <select onchange="if (this.value !='null') {load_molecule(this.value,'off')};this.value='null'">
                   <option selected="true" value="null">Choose a molecule to display</option>
-                  <option value ="load BF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo boron trifluoride; spin on;" >Boron Trifluoride</option>
-                  <option value ="load CO3(minus2).pdb; spacefill 25%; connect (atomno=1) (atomno=3) partialdouble;connect (atomno=1) (atomno=4) partialdouble; wireframe 0.1;spin on;set echo on; echo carbonate">Carbonate</option>
-                  <option value = 'load SO3.pdb; spacefill 25%; connect (atomno=1) (atomno=2) partialdouble;connect (atomno=1) (atomno=3) partialdouble;connect (atomno=1) (atomno=4) partialdouble; wireframe 0.1; set echo on; echo sulfur trioxide; spin on;'>Sulfur Trioxide</option>
+                  <option value ="load BF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo boron trifluoride;" >Boron Trifluoride</option>
+                  <option value ="load CO3(minus2).pdb; spacefill 25%; connect (atomno=1) (atomno=3) partialdouble;connect (atomno=1) (atomno=4) partialdouble; wireframe 0.1;set echo on; echo carbonate">Carbonate</option>
+                  <option value = 'load SO3.pdb; spacefill 25%; connect (atomno=1) (atomno=2) partialdouble;connect (atomno=1) (atomno=3) partialdouble;connect (atomno=1) (atomno=4) partialdouble; wireframe 0.1; set echo on; echo sulfur trioxide;'>Sulfur Trioxide</option>
               </select>
               <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
                   <option selected="true" value="null">Choose a molecule to download</option>
@@ -109,12 +107,6 @@ Jmol.Info = {
               <button onclick="showdiv('AX3_Lewis_structures')">
                   Compare Lewis structures
               </button>
-              <div class="Jmol-checkboxes">
-                   <script>
-                      Jmol.jmolCheckbox(VSEPR_Jmol,"spin on","spin off","Spin", true);
-                      Jmol.jmolCheckbox(VSEPR_Jmol,"measure allconnected (*)(*)(*)","measure off","Show angles", false);
-                  </script>
-              </div>
           </div>
       </li>
       <li>
@@ -125,7 +117,7 @@ Jmol.Info = {
             Molecules (bent)
         </h3>
             <div class = "accordion-contents">
-                <select onchange="if (this.value !='null') {Jmol.script(VSEPR_Jmol,this.value)};this.value='null'">
+                <select onchange="if (this.value !='null') {load_molecule(this.value,'\'sp2c\'')};this.value='null'">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load SO2.pdb; spacefill 25%;connect (atomno=1) (atomno=2) partialdouble;connect (atomno=1) (atomno=3) partialdouble; wireframe 0.1; set echo on; echo sulfur dioxide; spin on;" >Sulfur Dioxide*</option>
                 </select>
@@ -136,14 +128,6 @@ Jmol.Info = {
                 <button onclick="showdiv('AX2E_Lewis_structures')">
                     Compare Lewis structures
                 </button>
-                <div class="Jmol-checkboxes">
-                   <script>
-                      Jmol.jmolCheckbox(VSEPR_Jmol,"spin on","spin off","Spin", true);
-                      Jmol.jmolCheckbox(VSEPR_Jmol,"measure allconnected (*)(*)(*)","measure off","Show angles", false);
-                      // Below assumes the central atom is #1
-                      Jmol.jmolCheckbox(VSEPR_Jmol,"select atomno=1; lcaocartoon \'sp2c\'","lcaocartoon off","Show loan pair(s)", false);
-                  </script>
-                </div>
                 <p>Note how loan pairs repel bonds decreasing the bond angle to < 120&deg;.</p>
             </div>
       </li>
@@ -158,11 +142,15 @@ Jmol.Info = {
             </div>
       </li>
     </ul>
-      <div>* Measured geometry (from spectroscopic measurements) sourced from:<br>
+    <div class="Ref&Tech">
+        <h3>Reference and Technical Info</h3>
+      <p>* Measured geometry (from spectroscopic measurements) sourced from:<br>
           The NIST Computational Chemistry Comparison and Benchmark Database<br>
           NIST Standard Reference Database Number 101<br>
           Release 22, May 2022, Editor: Russell D. Johnson III<br>
           <a href="https://cccbdb.nist.gov/">https://cccbdb.nist.gov/</a>
+          <p>Other geometries are based on estimates from quantum computations.</p>
+
       </div>
         <div class="popdiv hidden" id="AX3_Lewis_structures">
         <button class="close-icon" onclick="hidediv('AX3_Lewis_structures')">X</button>
