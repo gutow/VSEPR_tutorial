@@ -64,10 +64,6 @@ Jmol.Info = {
     <div class="Jmol-checkboxes">
         <input id="spin" type="checkbox" checked>
         <label for="spin">Spin</label>
-        <input id="angles" type="checkbox">
-        <label for="angles">Show angles</label>
-        <input id="show_loan_pairs" type = "checkbox">
-        <label for="show_loan_pairs">Show loan pair(s)</label>
         <input id="spacefill" type="checkbox">
         <label for="spacefill">Show molecular surface (spacefill)</label>
         <script>
