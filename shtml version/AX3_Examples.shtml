@@ -56,10 +56,10 @@ Jmol.Info = {
         atoms. The "E" represents the electron group that is not involved
         in bonding. Molecules of the type AX<sub>3</sub> are described
         as having a <a
-        href="#Example%20AX3%20Molecules%20%28Trigonal%20Planar%29">  trigonal
+        href="#Example AX3 Molecules (Trigonal Planar)">  trigonal
         planar</a> molecular geometry and molecules of the type AX<sub>2</sub>E are
         described as having a <a
-        href="#Example%20AX2E%20Molecules%20%28bent%29">bent</a> molecular geometry.
+        href="#Example AX2E Molecules (bent)">bent</a> molecular geometry.
   </div>
 <div id="JmolApp">
   <script type="text/javascript">
@@ -87,18 +87,17 @@ Jmol.Info = {
         <li>
            <input type="checkbox" checked>
            <i></i>
-          <h3>
-              <a href="Example AX3 Molecules (Trigonal Planar)"></a>Example AX<sub>3</sub>
+          <h3 id="Example AX3 Molecules (Trigonal Planar)">Example AX<sub>3</sub>
               Molecules (trigonal planar)
           </h3>
           <div class = "accordion-contents">
-              <select onchange="if (this.value !='null') {load_molecule(this.value,'off')};this.value='null'">
+              <select onchange="if (this.value !='null') {load_molecule(this.value,'off')} this.value='null'">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load BF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo boron trifluoride;" >Boron Trifluoride</option>
                   <option value ="load CO3(minus2).pdb; spacefill 25%; connect (atomno=1) (atomno=2) partialdouble; connect (atomno=1) (atomno=3) partialdouble;connect (atomno=1) (atomno=4) partialdouble; wireframe 0.1;set echo on; echo carbonate">Carbonate</option>
                   <option value = 'load SO3.pdb; spacefill 25%; connect (atomno=1) (atomno=2) double;connect (atomno=1) (atomno=3) double;connect (atomno=1) (atomno=4) double; wireframe 0.1; set echo on; echo sulfur trioxide;'>Sulfur Trioxide</option>
               </select>
-              <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
+              <select onchange="if (this.value !='null') {window.open(this.value)} this.value='null'">
                   <option selected="true" value="null">Choose a molecule to download</option>
                   <option value ="BF3.pdb" >Boron Trifluoride</option>
                   <option value="CO3%28minus2%29.pdb">Carbonate</option>
@@ -117,11 +116,11 @@ Jmol.Info = {
             Molecules (bent)
         </h3>
             <div class = "accordion-contents">
-                <select onchange="if (this.value !='null') {load_molecule(this.value,'\'sp2c\'')};this.value='null'">
+                <select onchange="if (this.value !='null') {load_molecule(this.value,'\'sp2c\'')} this.value='null'">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load SO2.pdb; spacefill 25%;connect (atomno=1) (atomno=2) partialdouble;connect (atomno=1) (atomno=3) partialdouble; wireframe 0.1; set echo on; echo sulfur dioxide; spin on;" >Sulfur Dioxide*</option>
                 </select>
-                <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
+                <select onchange="if (this.value !='null') {window.open(this.value)} this.value='null'">
                   <option selected="true" value="null">Choose a molecule to download</option>
                   <option value ="SO2.pdb" >Sulfur Dioxide*</option>
                 </select>
