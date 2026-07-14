@@ -93,12 +93,12 @@ Jmol.Info = {
               Molecules (tetrahedral)
           </h3>
           <div class = "accordion-contents">
-              <select onchange="if (this.value !='null') {load_molecule(this.value,'off')};this.value='null';">
+              <select onchange="if (this.value !='null') {load_molecule(this.value,'off')} this.value='null';">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load CH4.pdb; spacefill 25%; wireframe 0.1; set echo on; echo methane*;" >Methane*</option>
                   <option value ="load CCl4.pdb; spacefill 25%; wireframe 0.1;set echo on; echo carbon tetrachloride*">Carbon Tetrachloride*</option>
               </select>
-              <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
+              <select onchange="if (this.value !='null') {window.open(this.value)} this.value='null'">
                   <option selected="true" value="null">Choose a molecule to download</option>
                   <option value ="CH4.pdb" >Methane*</option>
                   <option value="CCl4.pdb">Carbon Tetrachloride*</option>
@@ -116,13 +116,13 @@ Jmol.Info = {
             Molecules (trigonal pyramidal)
         </h3>
             <div class = "accordion-contents">
-                <select onchange="if (this.value !='null') {load_molecule(this.value,'\'sp3d\'')};this.value='null';">
+                <select onchange="if (this.value !='null') {load_molecule(this.value,'\'sp3d\'')} this.value='null';">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load NH3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo ammonia*;" >Ammonia*</option>
                   <option value ="load NF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo nitrogen trifluoride*;" >Nitrogen Triflouride*</option>
                   <option value ="load ClO3(minus).pdb; spacefill 25%; connect (atomno=1)(atomno=2) double; connect (atomno=1)(atomno=3) double;connect (atomno=1)(atomno=4) double; wireframe 0.1; set echo on; echo chlorate;" >Chlorate</option>
                 </select>
-                <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
+                <select onchange="if (this.value !='null') {window.open(this.value)} this.value='null'">
                   <option selected="true" value="null">Choose a molecule to download</option>
                   <option value="NH3.pdb">Ammonia*</option>
                   <option value ="NF3.pdb" >Nitrogen Trifluoride*</option>
@@ -142,12 +142,12 @@ Jmol.Info = {
             Molecules (bent)
         </h3>
             <div class = "accordion-contents">
-                <select onchange="if (this.value !='null') {load_molecule(this.value, '\'sp3c\' \'sp3d\'')};this.value='null';">
+                <select onchange="if (this.value !='null') {load_molecule(this.value, '\'sp3c\' \'sp3d\'')} this.value='null';">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load H2O.pdb; spacefill 25%; wireframe 0.1; set echo on; echo water*;" >Water*</option>
                   <option value ="load H2S.xyz; spacefill 25%; wireframe 0.1; set echo on; echo hydrogen sulfide*;" >Hydrogen Sulfide*</option>
                 </select>
-                <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
+                <select onchange="if (this.value !='null') {window.open(this.value)} this.value='null'">
                   <option selected="true" value="null">Choose a molecule to download</option>
                   <option value="H2O.pdb">Water*</option>
                   <option value ="H2S.xyz" >Hydrogen Sulfide*</option>
