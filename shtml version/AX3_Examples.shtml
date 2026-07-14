@@ -118,11 +118,13 @@ Jmol.Info = {
             <div class = "accordion-contents">
                 <select onchange="if (this.value !='null') {load_molecule(this.value,'\'sp2c\'')} this.value='null'">
                   <option selected="true" value="null">Choose a molecule to display</option>
-                  <option value ="load SO2.pdb; spacefill 25%;connect (atomno=1) (atomno=2) partialdouble;connect (atomno=1) (atomno=3) partialdouble; wireframe 0.1; set echo on; echo sulfur dioxide; spin on;" >Sulfur Dioxide*</option>
+                  <option value ="load SO2.pdb; spacefill 25%;connect (atomno=1) (atomno=2) double;connect (atomno=1) (atomno=3) double; wireframe 0.1; set echo on; echo sulfur dioxide*;" >Sulfur Dioxide*</option>
+                  <option value ="load O3.pdb; spacefill 25%;connect (atomno=1) (atomno=2) partialdouble;connect (atomno=1) (atomno=3) partialdouble; wireframe 0.1; set echo on; echo ozone*;" >Ozone*</option>
                 </select>
                 <select onchange="if (this.value !='null') {window.open(this.value)} this.value='null'">
                   <option selected="true" value="null">Choose a molecule to download</option>
                   <option value ="SO2.pdb" >Sulfur Dioxide*</option>
+                  <option value ="O3.pdb" >Ozone*</option>
                 </select>
                 <button onclick="showdiv('AX2E_Lewis_structures')">
                     Compare Lewis structures
@@ -174,6 +176,10 @@ Jmol.Info = {
                     <h4>SO<sub>2</sub></h4>
                     <img src="SO2_lewis.gif" alt="SO2 Lewis Structure"/>
                     <p>Bottom Lewis structure is the best because of lowest formal charges.</p>
+                </div>
+                <div class="Lewis-structure">
+                    <h4>O<sub>3</sub></h4>
+                    <img src="O3_Lewis.png" alt="O3 Lewis Structure"/>
                 </div>
             </div>
     </div>
