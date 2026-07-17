@@ -98,7 +98,7 @@ Jmol.Info = {
               Molecules (trigonal bipyramidal)
           </h3>
           <div class = "accordion-contents">
-              <select onchange="if (this.value !='null') {load_molecule(this.value,'off')} this.value='null';">
+              <select onchange="if (this.value !='null') {load_molecule(this.value,'select atomno=1; lcaocartoon off; isosurface off;')} this.value='null';">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load PCl5.pdb; spacefill 25%; wireframe 0.1; set echo on; echo phosphorus pentachloride;" >Phosphorous Pentachloride</option>
               </select>
@@ -119,7 +119,7 @@ Jmol.Info = {
             Molecules (seesaw)
         </h3>
             <div class = "accordion-contents">
-                <select onchange="if (this.value !='null') {load_molecule(this.value,'\'sp3de\'')} this.value='null';">
+                <select onchange="if (this.value !='null') {load_molecule(this.value,'isosurface center(atomno=1) lobe 0 0 1 0.8')} this.value='null';">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load SF4.xyz; spacefill 25%; wireframe 0.1; set echo on; echo sulfur tetrafluoride;" >Sulfur Tetrafluoride</option>
                   <option value ="load ClF4(plus1).pdb; spacefill 25%; wireframe 0.1; set echo on; echo chlorine tetrafluoride cation;" >Chlorine Tetrafluoride Cation</option>
@@ -143,7 +143,7 @@ Jmol.Info = {
             Molecules (T-shaped)
         </h3>
             <div class = "accordion-contents">
-                <select onchange="if (this.value !='null') {load_molecule(this.value, '\'sp3dd\' \'sp3de\'')} this.value='null';">
+                <select onchange="if (this.value !='null') {load_molecule(this.value, 'select atomno=1; lcaocartoon \'sp3dd\' \'sp3de\'')} this.value='null';">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load ClF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo chlorine trifluoride;" >Chlorine Trifluoride</option>
                  </select>

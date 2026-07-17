@@ -34,9 +34,9 @@ function toggle_lone_pairs(){
     let lone_pair_checkbox = document.getElementById('show_loan_pairs');
     // Assumes the central atom is #1
     if (lone_pair_checkbox.checked) {
-        Jmol.script(VSEPR_Jmol, "select atomno=1; lcaocartoon "+lone_pairs);
+        Jmol.script(VSEPR_Jmol, lone_pairs);
     } else {
-        Jmol.script(VSEPR_Jmol, "select atomno=1; lcaocartoon off");
+        Jmol.script(VSEPR_Jmol, "select atomno=1; lcaocartoon off; isosurface off;");
     }
 }
 function toggle_spacefill(){
@@ -50,7 +50,7 @@ function toggle_spacefill(){
 
 function load_molecule(load_script, loan_pairs) {
     Jmol.script(VSEPR_Jmol, load_script);
-    lone_pairs = loan_pairs;
+    lone_pairs = loan_pairs; //JSmol command to display lone pairs
     toggle_spin();
     toggle_angles();
     toggle_lone_pairs();
