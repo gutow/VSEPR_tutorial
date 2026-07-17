@@ -1,18 +1,63 @@
-HEADER    PROTEIN                                 09-APR-04   NONE
-TITLE     NULL                                                        
-COMPND      Tetrafluorochloro cationSOURCE    NULL                                                        
-KEYWDS    NULL                                                        
-EXPDTA    NULL                                                        
-AUTHOR    Marvin                                                      
-REVDAT   1   09-APR-04         0                                  
-ATOM      1 Cl           1      -0.401   0.000   0.000
-ATOM      2  F           1      -0.401   1.710   0.000
-ATOM      3  F           1      -0.401  -1.710   0.000
-ATOM      4  F           1      -1.256  -0.015  -1.481
-ATOM      5  F           1      -1.256  -0.015   1.481
-CONECT    1    2    3    4    5                                             
-CONECT    2    1                                                            
-CONECT    3    1                                                            
-CONECT    4    1                                                            
-CONECT    5    1
-MASTER        0    0    0    0    0    0    0    0    5    0    8    0  END
+MODEL     1
+HETATM    1 Cl1  UNK     1      -0.001  -0.001   0.410  1.00  0.00          CL  
+HETATM    2  F2  UNK     1      -1.117   1.115   0.273  1.00  0.00           F  
+HETATM    3  F3  UNK     1       1.115  -1.117   0.273  1.00  0.00           F  
+HETATM    4  F4  UNK     1       0.879   0.879  -0.479  1.00  0.00           F  
+HETATM    5  F5  UNK     1      -0.881  -0.881  -0.478  1.00  0.00           F  
+ENDMDL
+MODEL     2
+HETATM    6 Cl1  UNK     1      -0.001  -0.001   0.410  1.00  0.00          CL  
+HETATM    7  F2  UNK     1      -1.117   1.115   0.273  1.00  0.00           F  
+HETATM    8  F3  UNK     1       1.115  -1.117   0.273  1.00  0.00           F  
+HETATM    9  F4  UNK     1       0.879   0.879  -0.479  1.00  0.00           F  
+HETATM   10  F5  UNK     1      -0.881  -0.881  -0.478  1.00  0.00           F  
+ENDMDL
+MODEL     3
+HETATM   11 Cl1  UNK     1      -0.001  -0.001   0.382  1.00  0.00          CL  
+HETATM   12  F2  UNK     1      -1.137   1.136   0.356  1.00  0.00           F  
+HETATM   13  F3  UNK     1       1.136  -1.137   0.356  1.00  0.00           F  
+HETATM   14  F4  UNK     1       0.880   0.880  -0.547  1.00  0.00           F  
+HETATM   15  F5  UNK     1      -0.882  -0.882  -0.546  1.00  0.00           F  
+ENDMDL
+MODEL     4
+HETATM   16 Cl1  UNK     1      -0.001  -0.001   0.483  1.00  0.00          CL  
+HETATM   17  F2  UNK     1      -1.160   1.159   0.338  1.00  0.00           F  
+HETATM   18  F3  UNK     1       1.159  -1.160   0.338  1.00  0.00           F  
+HETATM   19  F4  UNK     1       0.851   0.851  -0.581  1.00  0.00           F  
+HETATM   20  F5  UNK     1      -0.853  -0.853  -0.579  1.00  0.00           F  
+ENDMDL
+MODEL     5
+HETATM   21 Cl1  UNK     1      -0.001  -0.001   0.429  1.00  0.00          CL  
+HETATM   22  F2  UNK     1      -1.148   1.147   0.349  1.00  0.00           F  
+HETATM   23  F3  UNK     1       1.147  -1.148   0.349  1.00  0.00           F  
+HETATM   24  F4  UNK     1       0.860   0.860  -0.563  1.00  0.00           F  
+HETATM   25  F5  UNK     1      -0.862  -0.862  -0.562  1.00  0.00           F  
+ENDMDL
+MODEL     6
+HETATM   26 Cl1  UNK     1      -0.001  -0.001   0.409  1.00  0.00          CL  
+HETATM   27  F2  UNK     1      -1.145   1.144   0.315  1.00  0.00           F  
+HETATM   28  F3  UNK     1       1.144  -1.145   0.315  1.00  0.00           F  
+HETATM   29  F4  UNK     1       0.885   0.885  -0.520  1.00  0.00           F  
+HETATM   30  F5  UNK     1      -0.887  -0.887  -0.519  1.00  0.00           F  
+ENDMDL
+MODEL     7
+HETATM   31 Cl1  UNK     1      -0.001  -0.001   0.408  1.00  0.00          CL  
+HETATM   32  F2  UNK     1      -1.144   1.142   0.328  1.00  0.00           F  
+HETATM   33  F3  UNK     1       1.142  -1.144   0.328  1.00  0.00           F  
+HETATM   34  F4  UNK     1       0.881   0.881  -0.533  1.00  0.00           F  
+HETATM   35  F5  UNK     1      -0.883  -0.883  -0.531  1.00  0.00           F  
+ENDMDL
+MODEL     8
+HETATM   36 Cl1  UNK     1      -0.001  -0.001   0.409  1.00  0.00          CL  
+HETATM   37  F2  UNK     1      -1.144   1.142   0.327  1.00  0.00           F  
+HETATM   38  F3  UNK     1       1.143  -1.144   0.327  1.00  0.00           F  
+HETATM   39  F4  UNK     1       0.882   0.882  -0.532  1.00  0.00           F  
+HETATM   40  F5  UNK     1      -0.884  -0.884  -0.531  1.00  0.00           F  
+ENDMDL
+MODEL     9
+HETATM   41 Cl1  UNK     1      -0.001  -0.001   0.409  1.00  0.00          CL  
+HETATM   42  F2  UNK     1      -1.144   1.142   0.327  1.00  0.00           F  
+HETATM   43  F3  UNK     1       1.143  -1.144   0.327  1.00  0.00           F  
+HETATM   44  F4  UNK     1       0.882   0.882  -0.532  1.00  0.00           F  
+HETATM   45  F5  UNK     1      -0.884  -0.884  -0.531  1.00  0.00           F  
+ENDMDL
