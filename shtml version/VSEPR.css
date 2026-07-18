@@ -204,6 +204,7 @@
 }
 div .container_inline_flex{
     display: inline-flex;
+    flex-wrap: wrap;
 }
 div .Lewis-structure {
     border-style: groove;

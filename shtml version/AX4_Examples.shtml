@@ -121,12 +121,14 @@ Jmol.Info = {
                   <option value ="load NH3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo ammonia*;" >Ammonia*</option>
                   <option value ="load NF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo nitrogen trifluoride*;" >Nitrogen Triflouride*</option>
                   <option value ="load ClO3(minus).pdb; spacefill 25%; connect (atomno=1)(atomno=2) double; connect (atomno=1)(atomno=3) double;connect (atomno=1)(atomno=4) double; wireframe 0.1; set echo on; echo chlorate;" >Chlorate</option>
+                  <option value ="load SOCl2.pdb; spacefill 25%; connect (atomno=1)(atomno=2) double; wireframe 0.1; set echo on; echo thionyl chloride*;" >Thionyl Chloride*</option>
                 </select>
                 <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
                   <option selected="true" value="null">Choose a molecule to download</option>
                   <option value="NH3.pdb">Ammonia*</option>
                   <option value ="NF3.pdb" >Nitrogen Trifluoride*</option>
                   <option value = "ClO3%28minus%29.pdb">Chlorate</option>
+                  <option value = "SOCl2.pdb">Thionyl Chloride*</option>
                 </select>
                 <button onclick="showdiv('AX3E_Lewis_structures')">
                     Compare Lewis structures
@@ -203,7 +205,13 @@ Jmol.Info = {
                 </div>
                 <div class="Lewis-structure">
                     <h4>ClO<sub>3</sub><sup>-</sup></h4>
-                    <img src="ClO3%28minus%29_lewis.png" alt="chlorate Lewis structure"/>
+                    <img src="ClO3%28minus%29_lewis.png" alt="chlorate Lewis structure"
+                    width="150px"/>
+                </div>
+                <div class="Lewis-structure">
+                    <h4>SOCl<sub>2</sub></h4>
+                    <img src="SOCl2_lewis.gif" alt="thionyl chloride Lewis structure"
+                    width="150px"/>
                 </div>
         </div>
     </div>
