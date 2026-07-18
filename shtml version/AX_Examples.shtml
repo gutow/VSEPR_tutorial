@@ -79,7 +79,7 @@ Jmol.Info = {
               Example AX Molecules (linear)
           </h3>
           <div class = "accordion-contents">
-              <select onchange="if (this.value !='null') {load_molecule(this.value,'off')};this.value='null'">
+              <select onchange="if (this.value !='null') {load_molecule(this.value,'select atomno=1; lcaocartoon off; isosurface off;')};this.value='null'">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load HCl.xyz; spacefill 25%; wireframe 0.1; set echo on; echo hydrogen chloride;">Hydrogen Chloride</option>
                   <option value ="load CO.pdb; spacefill 25%; connect triple; wireframe 0.1;set echo on; echo carbon monoxide">Carbon Monoxide</option>

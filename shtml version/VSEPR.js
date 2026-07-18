@@ -28,7 +28,7 @@ function toggle_angles(){
         Jmol.script(VSEPR_Jmol, "measure off");
     }
 }
-let lone_pairs=""; //Stores which loan pairs for current molecule.
+let lone_pairs=""; //Stores JSmol command to show lone pairs.
 
 function toggle_lone_pairs(){
     let lone_pair_checkbox = document.getElementById('show_loan_pairs');

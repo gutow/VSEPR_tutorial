@@ -93,7 +93,7 @@ Jmol.Info = {
               Molecules (tetrahedral)
           </h3>
           <div class = "accordion-contents">
-              <select onchange="if (this.value !='null') {load_molecule(this.value,'off')};this.value='null';">
+              <select onchange="if (this.value !='null') {load_molecule(this.value,'lcaocartoon off')};this.value='null';">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load CH4.pdb; spacefill 25%; wireframe 0.1; set echo on; echo methane*;" >Methane*</option>
                   <option value ="load CCl4.pdb; spacefill 25%; wireframe 0.1;set echo on; echo carbon tetrachloride*">Carbon Tetrachloride*</option>
@@ -116,7 +116,7 @@ Jmol.Info = {
             Molecules (trigonal pyramidal)
         </h3>
             <div class = "accordion-contents">
-                <select onchange="if (this.value !='null') {load_molecule(this.value,'\'sp3d\'')};this.value='null';">
+                <select onchange="if (this.value !='null') {load_molecule(this.value,'select atomno=1; lcaocartoon \'sp3d\'')};this.value='null';">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load NH3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo ammonia*;" >Ammonia*</option>
                   <option value ="load NF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo nitrogen trifluoride*;" >Nitrogen Triflouride*</option>
@@ -142,7 +142,7 @@ Jmol.Info = {
             Molecules (bent)
         </h3>
             <div class = "accordion-contents">
-                <select onchange="if (this.value !='null') {load_molecule(this.value, '\'sp3c\' \'sp3d\'')};this.value='null';">
+                <select onchange="if (this.value !='null') {load_molecule(this.value, 'select atomno=1; lcaocartoon \'sp3c\' \'sp3d\'')};this.value='null';">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load H2O.pdb; spacefill 25%; wireframe 0.1; set echo on; echo water*;" >Water*</option>
                   <option value ="load H2S.xyz; spacefill 25%; wireframe 0.1; set echo on; echo hydrogen sulfide*;" >Hydrogen Sulfide*</option>

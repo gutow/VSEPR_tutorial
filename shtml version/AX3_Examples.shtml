@@ -91,7 +91,7 @@ Jmol.Info = {
               Molecules (trigonal planar)
           </h3>
           <div class = "accordion-contents">
-              <select onchange="if (this.value !='null') {load_molecule(this.value,'off')} this.value='null'">
+              <select onchange="if (this.value !='null') {load_molecule(this.value,'select atomno=1; lcaocartoon off; isosurface off;')} this.value='null'">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load BF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo boron trifluoride;" >Boron Trifluoride</option>
                   <option value ="load CO3(minus2).pdb; spacefill 25%; connect (atomno=1) (atomno=2) partialdouble; connect (atomno=1) (atomno=3) partialdouble;connect (atomno=1) (atomno=4) partialdouble; wireframe 0.1;set echo on; echo carbonate">Carbonate</option>
@@ -116,7 +116,7 @@ Jmol.Info = {
             Molecules (bent)
         </h3>
             <div class = "accordion-contents">
-                <select onchange="if (this.value !='null') {load_molecule(this.value,'\'sp2c\'')} this.value='null'">
+                <select onchange="if (this.value !='null') {load_molecule(this.value,'select atomno=1; lcaocartoon \'sp2c\'')} this.value='null'">
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load SO2.pdb; spacefill 25%;connect (atomno=1) (atomno=2) double;connect (atomno=1) (atomno=3) double; wireframe 0.1; set echo on; echo sulfur dioxide*;" >Sulfur Dioxide*</option>
                   <option value ="load O3.pdb; spacefill 25%;connect (atomno=1) (atomno=2) partialdouble;connect (atomno=1) (atomno=3) partialdouble; wireframe 0.1; set echo on; echo ozone*;" >Ozone*</option>
