@@ -1,181 +1,223 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-  <title>AX6 AX5E and AX4E2 Examples</title>
-  <style type="text/css"> @import url(VSEPR.css);</style>
-<script src="../../Applets/JSmol/JSmol.min.js"></script>
-<!-- just for testing...uncomment above before loading onto server and
-delete below or comment it out-->
-<!--<script src ="JSmol.min.js"></script>-->
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>AX6 Examples</title>
+  <link rel="stylesheet" type="text/css" href="VSEPR.css"/>
+  <script src="../../Applets/JSmol/JSmol.min.js"></script>
+  <script src="VSEPR.js"></script>
   <meta content="J. Gutow" name="author">
-  <meta content="Live, animated examples of diatomic molecules"
- name="description">
+  <meta content="AX6 Examples" name="description">
   <meta
  content="VSEPR, Valence Shell Electron Pair Repulsion Model, Electron Domain Model, molecular shapes, rotatable, images, jmol"
  name="keywords">
- <script type="text/javascript">
+<script type="text/javascript">
 var VSEPR_Jmol; //used to hold the applet.
 Jmol.Info = {
-      
-      jarPath: "../../Applets/JSmol/java",
-//      jarPath: "java",
-      jarFile: "JmolApplet0.jar",
       j2sPath: "../../Applets/JSmol/j2s",
-//      j2sPath: "j2s",
-      use: "HTML5", // could be JAVA or HTML5
+      use: "HTML5",
+      debug: false,
+      width: "98%",
+      height: "98%",
 	  disableJ2SLoadMonitor: false,
 	  disableInitialConsole: true,
 	  serverURL: "../../Applets/JSmol/php/jsmol.php",
-	  script: "set echo middle; color echo blue; set echo on; echo Click on the buttons|at right to display|a 3D image you can|manipulate.;"
+	  script: "set echo middle; color echo blue; set echo on; echo Use the menus and tools |at right (widescreen) or|below (tall screen) to display| and adjust a 3D image|you can manipulate.;"
     }
-      
+
 ;(function() {
 
 // logic is set by indicating order of USE -- default is HTML5 for this test page, though
-   var use = "HTML5 JAVA IMAGE" // WEBGL only by request by link below.
+   var use = "HTML5 IMAGE" // WEBGL only by request by link below.
    var s = document.location.search;
 
    if (s.indexOf("USE=") >= 0)
      Jmol.Info.use = s.split("USE=")[1].split("&")[0]
-   else if (s.indexOf("JAVA") >= 0)
-     Jmol.Info.use = "JAVA"
    else if (s.indexOf("IMAGE") >= 0)
      Jmol.Info.use = "IMAGE"
    else if (s.indexOf("NOWEBGL") >= 0)
-     Jmol.Info.use = "JAVA IMAGE"
+     Jmol.Info.use = "IMAGE"
    else if (s.indexOf("WEBGL") >= 0)
      Jmol.Info.use = "WEBGL HTML5"
    if (s.indexOf("NOWEBGL") >= 0)
      Jmol.Info.use = use.replace(/WEBGL/,"")
-   var useSignedApplet = (s.indexOf("SIGNED") >= 0);
-   if(useSignedApplet && Jmol.Info.use == "HTML5") Jmol.Info.use = "JAVA";
 })();
-
 </script>
 </head>
-  <body>
+<body>
 <!--#include virtual = "VSEPR_Header.html"-->
-<div id="display">
-  <div id="Jmol_div">
-      <script type="text/javascript">
+<div class="content_container">
+  <div class="subtitle-text">Octahedral Electron Geometries (AX<sub>6</sub>, AX<sub>5</sub>E,
+      and AX<sub>4</sub>E<sub>2</sub>)</div>
+    <div id="AX6-explanation" class = "explanation-text">
+        Molecules in this category may have five, six or seven atoms. The
+        configuration is specified as AX<sub>6</sub> for the case with seven
+        total atoms, AX<sub>5</sub>E for the case with six atoms and AX<sub>4</sub>E<sub>2
+        </sub>for the case with five atoms.&nbsp; Remember the "E" represents
+        electron groups that are not involved in bonding, the "X" atoms around
+        the central atom and the "A" is the central atom. Molecules of
+        the type AX<sub>6</sub> are described as having an <a href="#AX6">octahedral</a>
+        molecular geometry, those of the type AX<sub>5</sub>E&nbsp;
+        as a <a href="#AX5E">square-pyramidal</a> molecular geometry, and those of the type AX<sub>4</sub>E<sub>2</sub>
+        as a <a href="#AX4E2">square-planar</a> molecular geometry.
+  </div>
+<div id="JmolApp">
+  <script type="text/javascript">
         VSEPR_Jmol = Jmol.getApplet("VSEPR_Jmol", Jmol.Info);
-      </script>
-      If your browser is Java capable you will get snappier performance if you 
-  <a href="?use=JAVA">use Java.</a>
+  </script>
+</div>
+<div id="controls" class = "mol-shape">
+    <div class="Jmol-checkboxes">
+        <input id="spin" type="checkbox" checked>
+        <label for="spin">Spin</label>
+        <input id="angles" type="checkbox">
+        <label for="angles">Show angles</label>
+        <input id="show_loan_pairs" type = "checkbox">
+        <label for="show_loan_pairs">Show loan pair(s)</label>
+        <input id="spacefill" type="checkbox">
+        <label for="spacefill">Show molecular surface (spacefill)</label>
+        <script>
+            document.getElementById("spin").addEventListener("click",toggle_spin);
+            document.getElementById("angles").addEventListener("click",toggle_angles);
+            document.getElementById("show_loan_pairs").addEventListener("click",toggle_lone_pairs);
+            document.getElementById("spacefill").addEventListener("click",toggle_spacefill);
+        </script>
+    </div>
+    <ul>
+        <li>
+           <input type="checkbox" checked>
+           <i></i>
+          <h3 id="AX6">
+              Example AX<sub>6</sub>
+              Molecules (octahedral)
+          </h3>
+          <div class = "accordion-contents">
+              <select onchange="if (this.value !='null') {load_molecule(this.value,'select atomno=1; lcaocartoon off; isosurface off;')} this.value='null';">
+                  <option selected="true" value="null">Choose a molecule to display</option>
+                  <option value ="load SF6.pdb; spacefill 25%; wireframe 0.1; set echo on; echo sulfur hexafluoride;" >Sulfur Hexafluoride</option>
+                  <option value ="load TeF6.pdb; spacefill 25%; wireframe 0.1;set echo on; echo tellurium hexafluoride" >Tellurium Hexafluoride</option>
+                  <option value ="load AlCl6(minus3).pdb; spacefill 25%; wireframe 0.1;set echo on; echo aluminum hexachloride anion" >Aluminum Hexachloride Anion</option>
+              </select>
+              <select onchange="if (this.value !='null') {window.open(this.value)} this.value='null'">
+                  <option selected="true" value="null">Choose a molecule to download</option>
+                  <option value ="SF6.pdb" >Sulfur Hexafluoride</option>
+                  <option value ="TeF6.pdb" >Tellurium Hexafluoride</option>
+                  <option value ="AlCl6(minus3).pdb" >Aluminum Hexachloride Anion</option>
+          </select>
+              <button onclick="showdiv('AX6_Lewis_structures')">
+                  Compare Lewis structures
+              </button>
+          </div>
+      </li>
+      <li>
+         <input type="checkbox" checked>
+            <i></i>
+        <h3 id="AX5E">
+            Example AX<sub>5</sub>E
+            Molecules (square-pyramidal)
+        </h3>
+            <div class = "accordion-contents">
+                <select onchange="if (this.value !='null') {load_molecule(this.value,'select atomno=1; lcaocartoon \'sp3d2f\';')} this.value='null';">
+                  <option selected="true" value="null">Choose a molecule to display</option>
+                  <option value ="load BrF5.pdb; spacefill 25%; wireframe 0.1; set echo on; echo bromine pentafluoride*;" >Bromine Pentafluoride*</option>
+                </select>
+                <select onchange="if (this.value !='null') {window.open(this.value)} this.value='null'">
+                  <option selected="true" value="null">Choose a molecule to download</option>
+                  <option value="BrF5.pdb">Bromine Pentafluoride*</option>
+                </select>
+                <button onclick="showdiv('AX5E_Lewis_structures')">
+                    Compare Lewis structures
+                </button>
+                <p>Note how loan pairs repel bonds decreasing the bond angle to < 90&deg;.</p>
+            </div>
+      </li>
+      <li>
+         <input type="checkbox" checked>
+            <i></i>
+        <h3 id="AX4E2">
+            Example AX<sub>4</sub>E<sub>2</sub>
+            Molecules (square-planar)
+        </h3>
+            <div class = "accordion-contents">
+                <select onchange="if (this.value !='null') {load_molecule(this.value, 'isosurface lp1 center(atomno=1) lobe 0 0 1 0.8;' +
+                 'isosurface lp2 center(atomno=1) lobe 0 0 -1 0.8;')} this.value='null';">
+                  <option selected="true" value="null">Choose a molecule to display</option>
+                  <option value ="load XeF4.pdb; spacefill 25%; wireframe 0.1; set echo on; echo xenon tetrafluoride;" >Xenon Tetrafluoride</option>
+                  <option value ="load ClF4(minus1).pdb; spacefill 25%; wireframe 0.1; set echo on; echo chlorine tetrafluoride anion;" >Chlorine Tetrafluoride Anion</option>
+                 </select>
+                <select onchange="if (this.value !='null') {window.open(this.value)} this.value='null'">
+                  <option selected="true" value="null">Choose a molecule to download</option>
+                  <option value="XeF4.pdb">Xenon Tetrafluoride</option>
+                  <option value="ClF4(minus1).pdb">Chlorine Tetrafluoride Anion</option>
+                </select>
+                <button onclick="showdiv('AX4E2_Lewis_structures')">
+                    Compare Lewis structures
+                </button>
+            </div>
+      </li>
+      <li>
+         <input type="checkbox" checked>
+            <i></i>
+        <h3>
+            <a id="JSmol Help"></a>Molecular Viewer Help
+        </h3>
+            <div class = "accordion-contents">
+              <!--#include virtual = "MVInstructions.html"-->
+            </div>
+      </li>
+    </ul>
+    <div class="Ref&Tech">
+        <h3>Reference and Technical Info</h3>
+      <p>* Measured geometry (from spectroscopic measurements) sourced from:<br>
+          The NIST Computational Chemistry Comparison and Benchmark Database<br>
+          NIST Standard Reference Database Number 101<br>
+          Release 22, May 2022, Editor: Russell D. Johnson III<br>
+          <a href="https://cccbdb.nist.gov/">https://cccbdb.nist.gov/</a>
+          <p>Other geometries are based on estimates from quantum computations.</p>
+
+      </div>
+        <div class="popdiv hidden" id="AX6_Lewis_structures">
+            <button class="close-icon" onclick="hidediv('AX6_Lewis_structures')">X</button>
+            <h3>AX<sub>5</sub> Lewis Structures</h3>
+            <div class="container_inline_flex">
+                <div class="Lewis-structure"><h4>SF<sub>6</sub></h4><img src="SF6_lewis.gif"
+                width="150px" alt="SF6 Lewis structure"/>
+                </div>
+                <div class="Lewis-structure"><h4>TeF<sub>6</sub></h4><img src="TeF6_lewis.gif"
+                width="150px" alt="TeF6 Lewis structure"/>
+                </div>
+                <div class="Lewis-structure"><h4>AlCl<sub>6</sub><sup>3-</sup></h4><img src="AlCl6%28minus3%29_lewis.GIF"
+                width="150px" alt="AlCl6(3-) Lewis structure"/>
+                </div>
+            </div>
+        </div>
+    <div class="popdiv hidden" id="AX5E_Lewis_structures">
+        <button class="close-icon" onclick="hidediv('AX5E_Lewis_structures')">X</button>
+        <h3>AX<sub>4</sub>E Lewis Structure</h3>
+        <div class="container_inline_flex">
+                <div class="Lewis-structure">
+                    <h4>BrF<sub>5</sub></h4>
+                    <img src="BrF5_lewis.gif" alt="BrF5 Lewis structure" width="150px"/>
+                </div>
+        </div>
+    </div>
+    <div class="popdiv hidden" id="AX4E2_Lewis_structures">
+        <button class="close-icon" onclick="hidediv('AX4E2_Lewis_structures')">X</button>
+        <h3>AX<sub>3</sub>E<sub>2</sub> Lewis Structure</h3>
+        <div class="container_inline_flex">
+                <div class="Lewis-structure">
+                    <h4>XeF<sub>4</sub></h4>
+                    <img src="XeF4_lewis.gif" alt="XeF4 Lewis structure" width="150px"/>
+                </div>
+                <div class="Lewis-structure">
+                    <h4>ClF<sub>4</sub><sup>-</sup></h4>
+                    <img src="ClF4%28minus1%29.gif" alt="ClF4(-) Lewis structure" width="150px"/>
+                </div>
+        </div>
+    </div>
   </div>
- <div id = "Jmol_button_div">
-  <div id ="AX6-header" class = "subtitle-text">
-    AX<sub>6</sub>, AX<sub>5</sub>E and AX<sub>4</sub>E<sub>2</sub> Configurations
-  </div>
-  <div id="AX6-explanation" class = "explanation-text">
-Molecules in this category may have five, six or seven atoms.&nbsp; The
-configuration is specified as AX<sub>6</sub> for the case with seven
-total atoms, AX<sub>5</sub>E for the case with six atoms and AX<sub>4</sub>E<sub>2
-</sub>for the case with five atoms.&nbsp; Remember the "E" represents
-electron groups that are not involved in bonding, the "X" atoms around
-the central atom and the "A" is the central atom.&nbsp; Molecules of
-the type AX<sub>6 </sub>are <a href="#AX6">octahedral</a>, molecules
-of the type AX<sub>5</sub>E&nbsp;
-are <a href="#AX5E">square-pyramidal</a> and molecules of the type AX<sub>4</sub>E<sub>2</sub>
-are <a href="#AX4E2">square-planar</a>.
-  </div>
-  <table class="example-table">
-   <caption>
-<a name="AX6"></a><b>Example AX<sub>6</sub> Molecules
-(Octahedral)</b>
-</caption>
-  <tbody>
-    <tr>
-      <td>Formula</td><td>Lewis Structure</td><td>Live 3-D view</td><td>Download for Jmol/Rasmol</td>
-    <tr>
-      <td>SF<sub>6</sub></td>
-      <td><img src="SF6_lewis.gif"></td>
-      <td>
-      <script type = "text/javascript">
-        Jmol.jmolButton("VSEPR_Jmol", "load SF6.pdb; spacefill 25%; wireframe 0.1; set echo on; echo sulfur hexafluoride; spin on;", "sulfur hexafluoride", "SF6_button", "Click for 3-D view of sulfur hexafluoride");
-      </script></td>
-      <td><a href="SF6.pdb">SF6.pdb</a>
-      </td>
-    </tr>
-    <tr>
-      <td>TeF<sub>6</sub></td>
-      <td><img src="TeF6_lewis.gif"> </td>
-      <td>
-      <script type = "text/javascript">
-        Jmol.jmolButton("VSEPR_Jmol", "load TeF6.pdb; spacefill 25%; wireframe 0.1;spin on;set echo on; echo tellurium hexafluoride", "tellurium hexafluoride", "TeF6_button", "Click for 3-D view of tellurium hexafluoride");
-      </script>
-      </td>
-      <td><a href="TeF6.pdb">TeF6.pdb</a></td>
-    </tr>
-    <tr>
-      <td>[AlCl<sub>6</sub>]<sup>3-</sup></td>
-      <td><img src="AlCl6%28minus3%29_lewis.GIF" > </td>
-      <td>
-      <script type = "text/javascript">
-        Jmol.jmolButton("VSEPR_Jmol", "load AlCl6(minus3).pdb; spacefill 25%; wireframe 0.1;spin on;set echo on; echo aluminum hexachloride anion", "aluminum hexachloride anion", "AlCl6(minus3)_button", "Click for 3-D view of aluminum hexachloride anion");
-      </script>
-      </td>
-      <td><a href="AlCl6%28minus3%29.pdb">AlCl6(minus3).pdb</a></td>
-    </tr>
-  </tbody>
-</table>
-<br>
-  <table class="example-table">
-   <caption>
-    <a name="AX5E"></a><b>Example AX<sub>5</sub>E Molecules (Square-pyramidal)</b>
-   </caption>
-  <tbody>
-    <tr>
-      <td>Formula</td><td>Lewis Structure</td><td>Live 3-D view</td><td>Download for Jmol/Rasmol</td>
-    <tr>
-      <td>BrF<sub>5</sub></td>
-      <td><img src="BrF5_lewis.gif"></td>
-      <td>
-      <script type = "text/javascript">
-        Jmol.jmolButton("VSEPR_Jmol", "load BrF5.pdb; spacefill 25%; wireframe 0.1; set echo on; echo bromine pentafluoride; spin on;", "bromine pentafluoride (lone pair hidden)", "BrF5_button", "Click for 3-D view of bromine pentafluoride");
-        Jmol.jmolBr();
-        Jmol.jmolButton("VSEPR_Jmol", "load BrF5.pdb; spacefill 25%; wireframe 0.1; set echo on; echo bromine pentafluoride; select Br; lcaocartoon \'sp3d2f\';spin on;", "bromine pentafluoride (lone pair shown)", "BrF5_LP_button", "Click for 3-D view of bromine pentafluoride");
-      </script></td>
-      <td><a href="BrF5.pdb">BrF5.pdb</a>
-      </td>
-    </tr>
-  </tbody>
-</table> 
-<br>
-  <table class="example-table">
-   <caption>
-    <a name="AX4E2"></a><b>Example AX<sub>4</sub>E<sub>2</sub>(Square-planar)</b>
-   </caption>
-  <tbody>
-    <tr>
-      <td>Formula</td><td>Lewis Structure</td><td>Live 3-D view</td><td>Download for Jmol/Rasmol</td>
-    <tr>
-      <td>XeF<sub>4</sub></td>
-      <td><img src="XeF4_lewis.gif"></td>
-      <td>
-      <script type = "text/javascript">
-        Jmol.jmolButton("VSEPR_Jmol", "load XeF4.pdb; spacefill 25%; wireframe 0.1; set echo on; echo xenon tetrafluoride; spin on;", "xenon tetrafluoride (lone pairs hidden)", "XeF4_button", "Click for 3-D view of xenon tetrafluoride");
-      </script></td>
-      <td><a href="XeF4.pdb">XeF4.pdb</a>
-      </td>
-    </tr>
-    <tr>
-      <td>ClF<sub>4</sub><sup>-</sup></td>
-      <td><img src="ClF4%28minus1%29.gif" style="width: 75px; height: 77px;"></td>
-      <td>
-      <script type = "text/javascript">
-        Jmol.jmolButton("VSEPR_Jmol", "load ClF4(minus1).pdb; spacefill 25%; wireframe 0.1; set echo on; echo chlorine tetrafluoride anion; spin on;", "chlorine tetrafluoride anion (lone pairs hidden)", "ClF4(minus1)_button", "Click for 3-D view of chlorine tetrafluoride anion");
-      </script></td>
-      <td><a href="ClF4%28minus1%29.pdb">ClF4(minus1).pdb</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
- <div id="help">
-  <!--#include virtual = "MVInstructions.html"--> 
- </div>
- <div class="update-info">Last Update: November 17, 2016 <br> by J. Gutow <br>Expires: --</div>
+    <!--#include virtual = "Last_mod_date.html"-->
+</div>
 </body>
 </html>
