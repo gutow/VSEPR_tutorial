@@ -1,8 +1,8 @@
-<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!DOCTYPE html>
 <html>
 <head>
   <meta http-equiv="Content-Type"
- content="text/html; charset=iso-8859-1">
+ content="text/html">
   <title>The VSEPR Model</title>
   <meta content="J. Gutow" name="author">
   <meta content="Description of how to use the VSEPR model"
@@ -10,8 +10,9 @@
   <meta
  content="VSEPR, Valence Shell Electron Pair Repulsion Model, Electron Domain Model, molecular shapes, rotatable, images, jmol"
  name="keywords">
+    <link rel="stylesheet" type="text/css" href="VSEPR.css"/>
 </head>
-  <body style="color: rgb(0, 0, 0); background-color: rgb(250, 248, 244);" alink="#000099" link="#000099" vlink="#990099">
+  <body>
 <!--#include virtual = "VSEPR_Header.html"-->
 <div style="text-align: center;"><big><b>The VSEPR Model</b></big> <br>
 </div>
@@ -34,26 +35,21 @@ atom.&nbsp; A
 group of electrons is a bond, a nonbonding electron pair, or
 occasionally an unpaired nonbonding electron. &nbsp;<span
  style="font-weight: bold; text-decoration: underline; color: rgb(255, 0, 0);">Each
-triple
-or double bond counts as only one group</span> for the purposes of this
+triple or double bond counts as only one group</span> for the purposes of this
 model.</p>
   <p>3) Based on this number of groups around the central atom the
 molecule falls into one of six basic
-categories.&nbsp; Within each category there are a number of different
+categories. Within each category there are a number of different
 names for the shapes depending upon the number of atoms and nonbonding
 groups around the central atom. <br>
   </p>
 </ul>
-<div style="margin-left: 80px;">
+<div class="subtitle-text">
 Below is a <span style="font-weight: bold;">Summary Table</span> of
-the categories and names for the various sub-shapes.<br>
+the categories and names for the various sub-shapes.
+  </div>
 <!--#include virtual = "VSEPR_Summary.html"-->
 </div>
-<div style="text-align: right;"><small><small>Last updated: September 1, 2013<br>
-Expires: ---<br>
-J.&nbsp; Gutow </small></small><br>
-</div>
-<br>
-<br>
+      <!--#include virtual = "Last_mod_date.html"-->
 </body>
 </html>
