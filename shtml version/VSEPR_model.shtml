@@ -10,7 +10,8 @@
   <meta
  content="VSEPR, Valence Shell Electron Pair Repulsion Model, Electron Domain Model, molecular shapes, rotatable, images, jmol"
  name="keywords">
-    <link rel="stylesheet" type="text/css" href="VSEPR.css"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link rel="stylesheet" type="text/css" href="VSEPR.css"/>
 </head>
   <body>
 <!--#include virtual = "VSEPR_Header.html"-->

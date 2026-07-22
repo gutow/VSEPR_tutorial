@@ -5,6 +5,7 @@
  http-equiv="content-type">
   <title>VSEPR_Summary</title>
   <script src="../../Applets/Java/Jmol/Jmol.js"></script>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link rel="stylesheet" type="text/css" href="VSEPR.css"/>
   <meta content="J. Gutow" name="author">
   <meta content="Summary of VSEPR with links to 3D examples"

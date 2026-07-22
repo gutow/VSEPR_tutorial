@@ -4,6 +4,7 @@
   <meta content="text/html; charset=ISO-8859-1"
  http-equiv="content-type">
   <title>AX4 Examples</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link rel="stylesheet" type="text/css" href="VSEPR.css"/>
   <script src="../../Applets/JSmol/JSmol.min.js"></script>
   <script src="VSEPR.js"></script>
