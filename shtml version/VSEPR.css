@@ -113,7 +113,35 @@
   .Ref\&Tech {
       display:inline-block;
   }
-  .example-table {      
+.example-table {
+      text-align:center;
+      border:solid;
+      border-top-width:1px;
+      border-left-width:1px;
+      border-bottom-width:1px;
+      border-right-width:1px;
+      border-spacing:2px;
+      border-collapse:separate;
+      border-color:grey;
+      border-style:inset;
+      display:table;
+  }
+  .e_groups {
+      width: 10%;
+      border-width: 1px;
+      border-style: solid;
+  }
+  .vsepr_cat {
+      width: 25%;
+      border-width: 1px;
+      border-style: solid;
+  }
+  .wedge_diagrams{
+      width: 64%;
+      border-width: 1px;
+      border-style: solid;
+  }
+/*  .example-table td {
       text-align:center;
       border-top-width:1px;
       border-left-width:1px;
@@ -125,18 +153,7 @@
       border-style:inset;
       display:table-cell;
   }
-  .example-table td {      
-      text-align:center;
-      border-top-width:1px;
-      border-left-width:1px;
-      border-bottom-width:1px;
-      border-right-width:1px;
-      border-spacing:2px;
-      border-collapse:separate;
-      border-color:grey;
-      border-style:inset;
-      display:table-cell;
-  }
+*/
    #JmolApp {
     display:inline-block;
     width:49%;
@@ -159,6 +176,7 @@
     max-height: 100%;
     overflow: scroll;
   }
+
   @media (max-width: 600px){
   #JmolApp {
     width:100%;
@@ -202,13 +220,22 @@
 .visible {
   display: inline-block;
 }
-div .container_inline_flex{
+.container_inline_flex{
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+  div .container_inline_flex{
     display: inline-flex;
     flex-wrap: wrap;
 }
 div .Lewis-structure {
     border-style: groove;
     text-align: center;
+}
+div .wedge_dia {
+    border-style: groove;
+    text-align: center;
+    max-width:fit-content;
 }
 
   /* Accordion */
