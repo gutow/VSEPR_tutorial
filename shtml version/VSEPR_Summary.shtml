@@ -16,5 +16,6 @@
 <div class="subtitle-text">Summary
 Table with Links to Examples</div>
 <!--#include virtual = "VSEPR_Summary.html"-->
+<!--#include virtual = "Last_mod_date.html"-->
 </body>
 </html>
