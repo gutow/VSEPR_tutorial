@@ -10,22 +10,26 @@ function showdiv(divID){
     let update = divclass.replace('hidden','visible');
     div.setAttribute("class",update);
 }
-function toggle_spin(){
+function toggle_spin() {
     let spin_checkbox = document.getElementById('spin');
     // Assumes the central atom is #1
-    if (spin_checkbox.checked) {
-        Jmol.script(VSEPR_Jmol, "spin on");
-    } else {
-        Jmol.script(VSEPR_Jmol, "spin off");
+    if (spin_checkbox != null) {
+        if (spin_checkbox.checked) {
+            Jmol.script(VSEPR_Jmol, "spin on");
+        } else {
+            Jmol.script(VSEPR_Jmol, "spin off");
+        }
     }
 }
 function toggle_angles(){
     let angle_checkbox = document.getElementById('angles');
     // Assumes the central atom is #1
-    if (angle_checkbox.checked) {
-        Jmol.script(VSEPR_Jmol, "measure allconnected (*)(*)(*)");
-    } else {
-        Jmol.script(VSEPR_Jmol, "measure off");
+    if (angle_checkbox != null) {
+        if (angle_checkbox.checked) {
+            Jmol.script(VSEPR_Jmol, "measure allconnected (*)(*)(*)");
+        } else {
+            Jmol.script(VSEPR_Jmol, "measure off");
+        }
     }
 }
 let lone_pairs=""; //Stores JSmol command to show lone pairs.
@@ -33,18 +37,22 @@ let lone_pairs=""; //Stores JSmol command to show lone pairs.
 function toggle_lone_pairs(){
     let lone_pair_checkbox = document.getElementById('show_loan_pairs');
     // Assumes the central atom is #1
-    if (lone_pair_checkbox.checked) {
-        Jmol.script(VSEPR_Jmol, lone_pairs);
-    } else {
-        Jmol.script(VSEPR_Jmol, "select atomno=1; lcaocartoon off; isosurface off;");
+    if (lone_pair_checkbox != null) {
+        if (lone_pair_checkbox.checked) {
+            Jmol.script(VSEPR_Jmol, lone_pairs);
+        } else {
+            Jmol.script(VSEPR_Jmol, "select atomno=1; lcaocartoon off; isosurface off;");
+        }
     }
 }
 function toggle_spacefill(){
     let spacefill_checkbox = document.getElementById('spacefill');
-    if (spacefill_checkbox.checked) {
-        Jmol.script(VSEPR_Jmol, "select all; spacefill 100%");
-    } else {
-        Jmol.script(VSEPR_Jmol, "select all; spacefill 25%");
+    if (spacefill_checkbox != null) {
+        if (spacefill_checkbox.checked) {
+            Jmol.script(VSEPR_Jmol, "select all; spacefill 100%");
+        } else {
+            Jmol.script(VSEPR_Jmol, "select all; spacefill 25%");
+        }
     }
 }
 
