@@ -10,5 +10,14 @@
         AddType text/html .shtml
         AddOutputFilter INCLUDES .shtml
 ```
+# JSmol settings
+The JSmol settings are in the file `JSmol_Settings.js`. Most of the settings 
+should not be touched. However, you will have to set the following two 
+appropriately for the relative location on the server this is installed on. 
+Below are the defaults:
+```javascript
+j2sPath: "../../Applets/JSmol/j2s",
+serverURL: "../../Applets/JSmol/php/jsmol.php",
+```
 # Before release of an update
 1. Change the last updated date in the file `Last_mod_date`.
