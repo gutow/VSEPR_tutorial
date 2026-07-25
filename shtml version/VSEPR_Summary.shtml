@@ -14,7 +14,7 @@
   <body>
 <!--#include virtual = "VSEPR_Header.html"-->
 <div class="subtitle-text">Summary
-Table with Links to Examples</div>
+Table with Links to Examples You Can Manipulate</div>
 <!--#include virtual = "VSEPR_Summary.html"-->
 <!--#include virtual = "Last_mod_date.html"-->
 </body>

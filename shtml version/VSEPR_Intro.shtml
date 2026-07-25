@@ -20,7 +20,7 @@ Repulsion) model and descriptions of it may be found in almost
 all introductory chemistry texts.
 <p><b>Software Requirements</b> <br>
 This site should work in any modern browser with javascript activated 
-(the default). You may also download the 3-D molecular images (*.pdb 
+(the default). You may also download the 3-D molecular images (*.pdb or *.xyz
 files) and use
 the free program <a href="Jmol.shtml">Jmol</a>
 (Jmol requires Java to be installed on your machine) to view them.<br>
