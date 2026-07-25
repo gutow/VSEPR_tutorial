@@ -53,7 +53,7 @@
                   <option selected="true" value="null">Choose a molecule to display</option>
                   <option value ="load HCl.xyz; spacefill 25%; wireframe 0.1; set echo on; echo hydrogen chloride;">Hydrogen Chloride</option>
                   <option value ="load CO.pdb; spacefill 25%; connect triple; wireframe 0.1;set echo on; echo carbon monoxide">Carbon Monoxide</option>
-                  <option value = "load CN(minus1).pdb; spacefill 25%; connect triple; wireframe 0.1; set echo on; echo cyanide;">Cynaide</option>
+                  <option value = "load CN(minus1).pdb; spacefill 25%; connect triple; wireframe 0.1; set echo on; echo cyanide;">Cyanide</option>
               </select>
               <select onchange="if (this.value !='null') {window.open(this.value)} this.value='null'">
                   <option selected="true" value="null">Choose a molecule to download</option>
