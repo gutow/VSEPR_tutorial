@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta content="text/html; charset=ISO-8859-1"
  http-equiv="content-type">
@@ -30,7 +30,7 @@
         not involved in bonding, the "X" atoms around the central atom
         and the "A" is the central atom. Molecules of the type AX<sub>5</sub> are
         described as having a <a
-         href="#Example AX5 Molecules (trigonal bipyramidal)">trigonal
+         href="#AX5">trigonal
         bipyramidal</a> molecular geometry,
         those of type AX<sub>4</sub>E&nbsp; a <a href="#AX4E">seesaw</a> molecular geometry,
         those of type AX<sub>3</sub>E<sub>2</sub> a <a href="#AX3E2">T-shaped</a>
@@ -63,17 +63,17 @@
         <li>
            <input type="checkbox" checked>
            <i></i>
-          <h3 id="Example AX5 Molecules (trigonal bipyramidal)">
+          <h3 id="AX5">
               Example AX<sub>5</sub>
               Molecules (trigonal bipyramidal)
           </h3>
           <div class = "accordion-contents">
               <select onchange="if (this.value !='null') {load_molecule(this.value,'select atomno=1; lcaocartoon off; isosurface off;')} this.value='null';">
-                  <option selected="true" value="null">Choose a molecule to display</option>
+                  <option selected="selected" value="null">Choose a molecule to display</option>
                   <option value ="load PCl5.pdb; spacefill 25%; wireframe 0.1; set echo on; echo phosphorus pentachloride;" >Phosphorous Pentachloride</option>
               </select>
               <select onchange="if (this.value !='null') {window.open(this.value)} this.value='null'">
-                  <option selected="true" value="null">Choose a molecule to download</option>
+                  <option selected="selected" value="null">Choose a molecule to download</option>
                   <option value ="PCl5.pdb" >Phosphorous Pentachloride</option>
               </select>
               <button onclick="showdiv('AX5_Lewis_structures')">
@@ -90,12 +90,12 @@
         </h3>
             <div class = "accordion-contents">
                 <select onchange="if (this.value !='null') {load_molecule(this.value,'isosurface center(atomno=1) lobe 0 0 1 0.8')} this.value='null';">
-                  <option selected="true" value="null">Choose a molecule to display</option>
+                  <option selected="selected" value="null">Choose a molecule to display</option>
                   <option value ="load SF4.xyz; spacefill 25%; wireframe 0.1; set echo on; echo sulfur tetrafluoride;" >Sulfur Tetrafluoride</option>
                   <option value ="load ClF4(plus1).pdb; spacefill 25%; wireframe 0.1; set echo on; echo chlorine tetrafluoride cation;" >Chlorine Tetrafluoride Cation</option>
                 </select>
                 <select onchange="if (this.value !='null') {window.open(this.value)} this.value='null'">
-                  <option selected="true" value="null">Choose a molecule to download</option>
+                  <option selected="selected" value="null">Choose a molecule to download</option>
                   <option value="SF4.xyz">Sulfur Tetrafluoride</option>
                   <option value ="ClF4(plus1).pdb" >Chlorine Tetrafluoride Anion</option>
                 </select>
@@ -114,11 +114,11 @@
         </h3>
             <div class = "accordion-contents">
                 <select onchange="if (this.value !='null') {load_molecule(this.value, 'select atomno=1; lcaocartoon \'sp3dd\' \'sp3de\'')} this.value='null';">
-                  <option selected="true" value="null">Choose a molecule to display</option>
+                  <option selected="selected" value="null">Choose a molecule to display</option>
                   <option value ="load ClF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo chlorine trifluoride;" >Chlorine Trifluoride</option>
                  </select>
                 <select onchange="if (this.value !='null') {window.open(this.value)} this.value='null'">
-                  <option selected="true" value="null">Choose a molecule to download</option>
+                  <option selected="selected" value="null">Choose a molecule to download</option>
                   <option value="ClF3.pdb">Chlorine Trifluoride</option>
                 </select>
                 <button onclick="showdiv('AX3E2_Lewis_structures')">
@@ -137,11 +137,11 @@
             <div class = "accordion-contents">
                 <select onchange="if (this.value !='null') {load_molecule(this.value, 'isosurface lp1 center(atomno=1) lobe 0.866 0 -0.5 .8;' +
                  'isosurface lp2 center(atomno=1) lobe 0 0 1 .8; isosurface lp3 center(atomno=1) lobe -0.867 0 -0.5 .8;')} this.value='null';">
-                  <option selected="true" value="null">Choose a molecule to display</option>
+                  <option selected="selected" value="null">Choose a molecule to display</option>
                   <option value ="load XeF2.pdb; spacefill 25%; wireframe 0.1; set echo on; echo xenon difluoride;" >Xenon Difluoride</option>
                  </select>
                 <select onchange="if (this.value !='null') {window.open(this.value)} this.value='null'">
-                  <option selected="true" value="null">Choose a molecule to download</option>
+                  <option selected="selected" value="null">Choose a molecule to download</option>
                   <option value="XeF2.pdb">Xenon Difluoride</option>
                 </select>
                 <button onclick="showdiv('AX2E3_Lewis_structures')">

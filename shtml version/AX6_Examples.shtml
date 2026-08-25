@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta content="text/html; charset=ISO-8859-1"
  http-equiv="content-type">
@@ -64,13 +64,13 @@
           </h3>
           <div class = "accordion-contents">
               <select onchange="if (this.value !='null') {load_molecule(this.value,'select atomno=1; lcaocartoon off; isosurface off;')} this.value='null';">
-                  <option selected="true" value="null">Choose a molecule to display</option>
+                  <option selected="selected" value="null">Choose a molecule to display</option>
                   <option value ="load SF6.pdb; spacefill 25%; wireframe 0.1; set echo on; echo sulfur hexafluoride;" >Sulfur Hexafluoride</option>
                   <option value ="load TeF6.pdb; spacefill 25%; wireframe 0.1;set echo on; echo tellurium hexafluoride" >Tellurium Hexafluoride</option>
                   <option value ="load AlCl6(minus3).pdb; spacefill 25%; wireframe 0.1;set echo on; echo aluminum hexachloride anion" >Aluminum Hexachloride Anion</option>
               </select>
               <select onchange="if (this.value !='null') {window.open(this.value)} this.value='null'">
-                  <option selected="true" value="null">Choose a molecule to download</option>
+                  <option selected="selected" value="null">Choose a molecule to download</option>
                   <option value ="SF6.pdb" >Sulfur Hexafluoride</option>
                   <option value ="TeF6.pdb" >Tellurium Hexafluoride</option>
                   <option value ="AlCl6(minus3).pdb" >Aluminum Hexachloride Anion</option>
@@ -89,11 +89,11 @@
         </h3>
             <div class = "accordion-contents">
                 <select onchange="if (this.value !='null') {load_molecule(this.value,'select atomno=1; lcaocartoon \'sp3d2f\';')} this.value='null';">
-                  <option selected="true" value="null">Choose a molecule to display</option>
+                  <option selected="selected" value="null">Choose a molecule to display</option>
                   <option value ="load BrF5.pdb; spacefill 25%; wireframe 0.1; set echo on; echo bromine pentafluoride*;" >Bromine Pentafluoride*</option>
                 </select>
                 <select onchange="if (this.value !='null') {window.open(this.value)} this.value='null'">
-                  <option selected="true" value="null">Choose a molecule to download</option>
+                  <option selected="selected" value="null">Choose a molecule to download</option>
                   <option value="BrF5.pdb">Bromine Pentafluoride*</option>
                 </select>
                 <button onclick="showdiv('AX5E_Lewis_structures')">
@@ -112,12 +112,12 @@
             <div class = "accordion-contents">
                 <select onchange="if (this.value !='null') {load_molecule(this.value, 'isosurface lp1 center(atomno=1) lobe 0 0 1 0.8;' +
                  'isosurface lp2 center(atomno=1) lobe 0 0 -1 0.8;')} this.value='null';">
-                  <option selected="true" value="null">Choose a molecule to display</option>
+                  <option selected="selected" value="null">Choose a molecule to display</option>
                   <option value ="load XeF4.pdb; spacefill 25%; wireframe 0.1; set echo on; echo xenon tetrafluoride;" >Xenon Tetrafluoride</option>
                   <option value ="load ClF4(minus1).pdb; spacefill 25%; wireframe 0.1; set echo on; echo chlorine tetrafluoride anion;" >Chlorine Tetrafluoride Anion</option>
                  </select>
                 <select onchange="if (this.value !='null') {window.open(this.value)} this.value='null'">
-                  <option selected="true" value="null">Choose a molecule to download</option>
+                  <option selected="selected" value="null">Choose a molecule to download</option>
                   <option value="XeF4.pdb">Xenon Tetrafluoride</option>
                   <option value="ClF4(minus1).pdb">Chlorine Tetrafluoride Anion</option>
                 </select>

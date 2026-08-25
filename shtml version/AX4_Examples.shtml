@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta content="text/html; charset=ISO-8859-1"
  http-equiv="content-type">
@@ -26,11 +26,11 @@
         </sub>for the case with three.&nbsp; Remember "E" represents electron
         group(s) not involved in bonding, "X" atoms around the central atom
         and "A" is the central atom.&nbsp; Molecules of the type AX<sub>4</sub>
-        are described as having a <a href="#Example%20AX4%20Molecules%20%28Tetrahedral%29">tetrahedral</a>,
+        are described as having a <a href="#Example AX4 Molecules (Tetrahedral)">tetrahedral</a>,
         molecular geometry, those of type AX<sub>3</sub>E as <a
-        href="#Example%20AX3E%20Molecules%20%28Pyramidal%29">trigonal pyramidal</a>
+        href="#Example AX3E Molecules (Pyramidal)">trigonal pyramidal</a>
         molecular geometry, and those of the type AX<sub>2</sub>E<sub>2</sub> as <a
-        href="#Example%20AX2E2%20Molecules%20%28Bent%29">bent</a> molecular geometry.
+        href="#Example AX2E2 Molecules (Bent)">bent</a> molecular geometry.
     </div>
 <div id="JmolApp">
   <script type="text/javascript">
@@ -64,12 +64,12 @@
           </h3>
           <div class = "accordion-contents">
               <select onchange="if (this.value !='null') {load_molecule(this.value,'lcaocartoon off')};this.value='null';">
-                  <option selected="true" value="null">Choose a molecule to display</option>
+                  <option selected="selected" value="null">Choose a molecule to display</option>
                   <option value ="load CH4.pdb; spacefill 25%; wireframe 0.1; set echo on; echo methane*;" >Methane*</option>
                   <option value ="load CCl4.pdb; spacefill 25%; wireframe 0.1;set echo on; echo carbon tetrachloride*">Carbon Tetrachloride*</option>
               </select>
               <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
-                  <option selected="true" value="null">Choose a molecule to download</option>
+                  <option selected="selected" value="null">Choose a molecule to download</option>
                   <option value ="CH4.pdb" >Methane*</option>
                   <option value="CCl4.pdb">Carbon Tetrachloride*</option>
               </select>
@@ -87,14 +87,14 @@
         </h3>
             <div class = "accordion-contents">
                 <select onchange="if (this.value !='null') {load_molecule(this.value,'select atomno=1; lcaocartoon \'sp3d\'')};this.value='null';">
-                  <option selected="true" value="null">Choose a molecule to display</option>
+                  <option selected="selected" value="null">Choose a molecule to display</option>
                   <option value ="load NH3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo ammonia*;" >Ammonia*</option>
                   <option value ="load NF3.pdb; spacefill 25%; wireframe 0.1; set echo on; echo nitrogen trifluoride*;" >Nitrogen Triflouride*</option>
                   <option value ="load ClO3(minus).pdb; spacefill 25%; connect (atomno=1)(atomno=2) double; connect (atomno=1)(atomno=3) double;connect (atomno=1)(atomno=4) double; wireframe 0.1; set echo on; echo chlorate;" >Chlorate</option>
                   <option value ="load SOCl2.pdb; spacefill 25%; connect (atomno=1)(atomno=2) double; wireframe 0.1; set echo on; echo thionyl chloride*;" >Thionyl Chloride*</option>
                 </select>
                 <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
-                  <option selected="true" value="null">Choose a molecule to download</option>
+                  <option selected="selected" value="null">Choose a molecule to download</option>
                   <option value="NH3.pdb">Ammonia*</option>
                   <option value ="NF3.pdb" >Nitrogen Trifluoride*</option>
                   <option value = "ClO3%28minus%29.pdb">Chlorate</option>
@@ -115,12 +115,12 @@
         </h3>
             <div class = "accordion-contents">
                 <select onchange="if (this.value !='null') {load_molecule(this.value, 'select atomno=1; lcaocartoon \'sp3c\' \'sp3d\'')};this.value='null';">
-                  <option selected="true" value="null">Choose a molecule to display</option>
+                  <option selected="selected" value="null">Choose a molecule to display</option>
                   <option value ="load H2O.pdb; spacefill 25%; wireframe 0.1; set echo on; echo water*;" >Water*</option>
                   <option value ="load H2S.xyz; spacefill 25%; wireframe 0.1; set echo on; echo hydrogen sulfide*;" >Hydrogen Sulfide*</option>
                 </select>
                 <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
-                  <option selected="true" value="null">Choose a molecule to download</option>
+                  <option selected="selected" value="null">Choose a molecule to download</option>
                   <option value="H2O.pdb">Water*</option>
                   <option value ="H2S.xyz" >Hydrogen Sulfide*</option>
                 </select>

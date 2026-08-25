@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta content="text/html; charset=ISO-8859-1"
  http-equiv="content-type">
@@ -50,17 +50,16 @@
         <li>
            <input type="checkbox" checked>
            <i></i>
-          <h3>
-              <a href="Example AX2 Molecules (linear)"></a>Example AX<sub>2</sub>
-              Molecules (linear)
+          <h3 id="Example AX2 Molecules (linear)">
+              Example AX<sub>2</sub> Molecules (linear)
           </h3>
           <div class = "accordion-contents">
               <select onchange="if (this.value !='null') {load_molecule(this.value,'select atomno=1; lcaocartoon off; isosurface off;')};this.value='null'">
-                  <option selected="true" value="null">Choose a molecule to display</option>
+                  <option selected="selected" value="null">Choose a molecule to display</option>
                   <option value ="load CO2.pdb; spacefill 25%; connect (atomno=1) (atomno=3) double; connect (atomno=1) (atomno=2) double; wireframe 0.1; set echo on; echo carbon dioxide;" >Carbon Dioxide</option>
               </select>
               <select onchange="if (this.value !='null') {window.open(this.value)};this.value='null'">
-                  <option selected="true" value="null">Choose a molecule to download</option>
+                  <option selected="selected" value="null">Choose a molecule to download</option>
                   <option value ="CO2.pdb" >Carbon Dioxide</option>
               </select>
               <button onclick="showdiv('AX2_Lewis_structures')">

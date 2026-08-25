@@ -19,5 +19,22 @@ Below are the defaults:
 j2sPath: "../../Applets/JSmol/j2s",
 serverURL: "../../Applets/JSmol/php/jsmol.php",
 ```
+# Links to set or verify
+1. Contents of "hosted-by" div in `VSEPR_Header.html`
+```
+    <div id="hosted-by">
+        Hosted by <a href="https://uwosh.edu/Chemistry">UW Oshkosh Chemistry</a>
+    </div>
+```
+2. Link to Lewis Structure tutorial in `VSEPR_Intro.shtml` ~ line 16
+```
+   <a href="../../Lewis_Tutorial/Lewis.shtml" target="noframes">Lewis
+Structure</a>
+```
+3. Link to Lewis Structure tutorial in `VSEPR_model.shtml` ~ line 28
+```
+   <a href="../../Lewis_Tutorial/Lewis.shtml" target="noframes">Lewis
+Structure</a>
+```
 # Before release of an update
 1. Change the last updated date in the file `Last_mod_date`.
