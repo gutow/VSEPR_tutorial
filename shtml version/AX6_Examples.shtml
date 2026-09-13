@@ -149,7 +149,7 @@
       </div>
         <div class="popdiv hidden" id="AX6_Lewis_structures">
             <button class="close-icon" onclick="hidediv('AX6_Lewis_structures')">X</button>
-            <h3>AX<sub>5</sub> Lewis Structures</h3>
+            <h3>AX<sub>6</sub> Lewis Structures</h3>
             <div class="container_inline_flex">
                 <div class="Lewis-structure"><h4>SF<sub>6</sub></h4><img src="SF6_lewis.gif"
                 width="150px" alt="SF6 Lewis structure"/>
@@ -164,7 +164,7 @@
         </div>
     <div class="popdiv hidden" id="AX5E_Lewis_structures">
         <button class="close-icon" onclick="hidediv('AX5E_Lewis_structures')">X</button>
-        <h3>AX<sub>4</sub>E Lewis Structure</h3>
+        <h3>AX<sub>5</sub>E Lewis Structure</h3>
         <div class="container_inline_flex">
                 <div class="Lewis-structure">
                     <h4>BrF<sub>5</sub></h4>
@@ -174,7 +174,7 @@
     </div>
     <div class="popdiv hidden" id="AX4E2_Lewis_structures">
         <button class="close-icon" onclick="hidediv('AX4E2_Lewis_structures')">X</button>
-        <h3>AX<sub>3</sub>E<sub>2</sub> Lewis Structure</h3>
+        <h3>AX<sub>4</sub>E<sub>2</sub> Lewis Structure</h3>
         <div class="container_inline_flex">
                 <div class="Lewis-structure">
                     <h4>XeF<sub>4</sub></h4>
