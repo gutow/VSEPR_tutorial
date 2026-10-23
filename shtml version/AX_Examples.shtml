@@ -23,7 +23,7 @@
         Molecules in this category are all diatomics (molecules containing two
   atoms).&nbsp;There may be many electron groups around the "central" atom, but there
   is only one other atom in the molecule. The configuration is specified as AX,
-  where A represents the one atom and the X represents the other atom.
+  where A represents one atom and the X represents the other atom.
   </div>
 <div id="JmolApp">
   <script type="text/javascript">
